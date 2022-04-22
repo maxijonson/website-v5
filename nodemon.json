@@ -1,0 +1,6 @@
+{
+    "watch": ["src"],
+    "exec": "npm start",
+    "ext": "js,ts",
+    "legacyWatch": true
+}
