@@ -38,6 +38,7 @@
                 "ignoreRestSiblings": true
             }
         ],
+        "@typescript-eslint/no-explicit-any": "off",
         "max-classes-per-file": "off",
         "no-useless-constructor": "off",
         "class-methods-use-this": "off",
