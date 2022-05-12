@@ -40,8 +40,8 @@
         "node": "16.x"
     },
     "dependencies": {
-        "@mantine/core": "4.1.4",
-        "@mantine/hooks": "4.1.4",
+        "@mantine/core": "^4.2.4",
+        "@mantine/hooks": "^4.2.4",
         "dotenv": "16.0.0",
         "i18next": "^21.8.0",
         "i18next-browser-languagedetector": "^6.1.4",

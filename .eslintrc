@@ -48,7 +48,8 @@
             {
                 "js": "never",
                 "json": "always",
-                "ts": "never"
+                "ts": "never",
+                "ttf": "always"
             }
         ],
         "import/no-extraneous-dependencies": "off",
