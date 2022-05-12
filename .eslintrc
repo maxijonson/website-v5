@@ -70,6 +70,7 @@
                 "props": false
             }
         ],
+        "no-restricted-exports": "off",
         "spaced-comment": [
             "warn",
             "always",

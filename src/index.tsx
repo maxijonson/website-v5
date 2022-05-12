@@ -6,8 +6,11 @@ import {
     MantineProvider,
     TypographyStylesProvider,
 } from "@mantine/core";
-import { App } from "./components/App";
-import { DebugTools } from "./components/DebugTools";
+import initLocales from "./i18n";
+import App from "./components/App";
+import DebugTools from "./components/DebugTools";
+
+initLocales(); // If this is too slow, consider adding it in a "Loading" component and awaiting it.
 
 const root = createRoot(document.getElementById("root")!);
 

@@ -1,1 +1,3 @@
-export { default as DebugTools } from "./DebugTools";
+import DebugTools from "./DebugTools";
+
+export default DebugTools;
