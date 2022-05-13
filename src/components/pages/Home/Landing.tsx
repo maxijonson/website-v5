@@ -43,9 +43,9 @@ const useStyles = createStyles((theme, { containerHeight }: UseStyleProps) => ({
         position: "absolute",
     },
     textWrapper: {
-        textShadow: "#505a63 0px 6px 0.5em",
+        textShadow: `${theme.colors.cyan[0]} 0px 0px 12px, #505a63 0px 6px 0.5em`,
         textAlign: "center",
-        color: theme.colors.dark[5],
+        color: theme.colors.dark[6],
     },
     textTitle: {
         fontSize: "3rem",
@@ -62,6 +62,7 @@ const useStyles = createStyles((theme, { containerHeight }: UseStyleProps) => ({
     },
     divider: {
         margin: "0 64px",
+        boxShadow: `${theme.colors.cyan[0]} 0px 0px 8px, #505a63 0px 6px 0.5em`,
     },
     textSubtitle: {
         fontSize: "1rem",
