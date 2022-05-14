@@ -14,6 +14,9 @@ import LatoBoldItalic from "../../assets/fonts/Lato/Lato-BoldItalic.ttf";
 import LatoBlack from "../../assets/fonts/Lato/Lato-Black.ttf";
 import LatoBlackItalic from "../../assets/fonts/Lato/Lato-BlackItalic.ttf";
 
+// Staatliches
+import StaatlichesRegular from "../../assets/fonts/Staatliches/Staatliches-Regular.ttf";
+
 type Font = [font: any, weight: number | string, style: string];
 
 export default () => {
@@ -32,6 +35,10 @@ export default () => {
         ];
     }, []);
 
+    const staatliches = React.useMemo<Font[]>(() => {
+        return [[StaatlichesRegular, "normal", "normal"]];
+    }, []);
+
     return (
         <Global
             styles={[
@@ -39,6 +46,17 @@ export default () => {
                     return {
                         "@font-face": {
                             fontFamily: "Lato",
+                            fontStyle: style,
+                            fontWeight: weight,
+                            src: `url(${font}) format("truetype")`,
+                            fontDisplay: "swap",
+                        },
+                    };
+                }),
+                ..._.map(staatliches, ([font, weight, style]) => {
+                    return {
+                        "@font-face": {
+                            fontFamily: "Staatliches",
                             fontStyle: style,
                             fontWeight: weight,
                             src: `url(${font}) format("truetype")`,

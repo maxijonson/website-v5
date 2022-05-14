@@ -8,18 +8,14 @@ import {
     Divider,
     createStyles,
 } from "@mantine/core";
-import { useOs, useViewportSize, useNetwork } from "@mantine/hooks";
+import { useOs, useNetwork } from "@mantine/hooks";
 import { useTranslation } from "react-i18next";
 import StaticBackground from "../../../assets/images/Home_Landing_Background.jpg";
 import VideoBackground from "../../../assets/videos/Home_Landing_Video.mp4";
 
-interface UseStyleProps {
-    containerHeight: number;
-}
-
-const useStyles = createStyles((theme, { containerHeight }: UseStyleProps) => ({
+const useStyles = createStyles((theme) => ({
     container: {
-        height: containerHeight,
+        height: "100vh",
         position: "relative",
         overflow: "hidden",
     },
@@ -78,10 +74,9 @@ const useStyles = createStyles((theme, { containerHeight }: UseStyleProps) => ({
 }));
 
 export default () => {
-    const { height } = useViewportSize();
     const os = useOs();
     const network = useNetwork();
-    const { classes } = useStyles({ containerHeight: height });
+    const { classes } = useStyles();
     const { t } = useTranslation(["home"]);
 
     const playVideo = os !== "ios" && os !== "android" && !network.saveData;

@@ -10,6 +10,7 @@ import App from "./components/App";
 import DebugTools from "./components/DebugTools";
 import "./i18n";
 import Fonts from "./components/Fonts";
+import GlobalStyles from "./components/GlobalStyles";
 
 const root = createRoot(document.getElementById("root")!);
 
@@ -36,6 +37,7 @@ const Root = () => {
                     >
                         <DebugTools />
                         <Fonts />
+                        <GlobalStyles />
                         <App />
                     </MantineProvider>
                 </ColorSchemeProvider>
