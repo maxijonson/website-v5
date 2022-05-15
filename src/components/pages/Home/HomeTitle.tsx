@@ -1,27 +1,49 @@
 import React from "react";
-import { createStyles, Title, Divider } from "@mantine/core";
+import {
+    createStyles,
+    Title,
+    Divider,
+    TitleOrder,
+    CSSObject,
+    DefaultMantineColor,
+} from "@mantine/core";
 
-interface HomeTitleProps {
-    title: string;
+interface StyleProps {
+    color?: CSSObject["color"];
+    align?: CSSObject["textAlign"];
 }
 
-const useStyles = createStyles((theme) => ({
+interface HomeTitleProps extends StyleProps {
+    title: string;
+    className?: string;
+    order?: TitleOrder;
+    dividerColor?: DefaultMantineColor;
+}
+
+const useStyles = createStyles((theme, { color, align }: StyleProps) => ({
     title: {
         fontFamily: "Staatliches",
-        color: theme.colors.dark[8],
+        color: color ?? theme.colors.dark[8],
         textTransform: "uppercase",
-        textAlign: "center",
+        textAlign: align ?? "center",
     },
 }));
 
-export default ({ title }: HomeTitleProps) => {
-    const { classes } = useStyles();
+export default ({
+    title,
+    className = "",
+    order = 1,
+    dividerColor,
+    color,
+    align,
+}: HomeTitleProps) => {
+    const { classes } = useStyles({ color, align });
     return (
         <div>
-            <Title className={classes.title} order={1}>
+            <Title className={`${classes.title} ${className}`} order={order}>
                 {title}
             </Title>
-            <Divider size="xl" />
+            <Divider size="xl" color={dividerColor} mb="md" />
         </div>
     );
 };

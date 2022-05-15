@@ -15,6 +15,7 @@ const useStyles = createStyles((theme) => ({
     container: {
         position: "relative",
         overflowX: "hidden",
+        background: theme.colors.gray[0],
     },
     content: {},
     stack: {},

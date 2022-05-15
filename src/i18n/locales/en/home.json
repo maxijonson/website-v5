@@ -5,5 +5,23 @@
     "bio": {
         "title": "About Me",
         "text": "I'm a software engineering student located in Montreal, Quebec. I have a great passion and experience for Web development, from Front-End to Back-End. My favorite programming language has always been JavaScript (more specifically, TypeScript) and I always get excited to try out new technologies to build something amazing! I love to learn new things and I'm always looking for ways to improve myself, such as self learning by trying them out or taking an online course.\n\nI am also a big Star Wars fan. Whenever a new series or season comes out, I'll be first to watch it! I love EDM music and my favorite artist is Illenium. I like putting some good jam on to fuel my coding fingers! I am also a huge dog lover and am the proud owner of an adorable Soft Coated Wheaten Terrier named \"Kingsley\"!"
+    },
+    "skills": {
+        "title": "My Skills",
+        "text": "Here's a list of my technical skills. I specialize in Web technologies, but I've learned a thing or two about other fields while I was in school and in past job experiences.",
+        "group": {
+            "web": "Web",
+            "application": "Application",
+            "database": "Database",
+            "cloud": "Cloud",
+            "other": "Other"
+        },
+        "proficiency": {
+            "1": "Beginner - Tipped my toe in the water.",
+            "2": "Intermediate - I've learned a thing or two.",
+            "3": "Advanced - I can handle projects with this!",
+            "4": "Expert - I'm a ninja!",
+            "5": "Master - I eat this every day!"
+        }
     }
 }

@@ -86,6 +86,8 @@
             "error",
             { "extensions": [".tsx", ".jsx"] }
         ],
-        "react/function-component-definition": "off"
+        "react/function-component-definition": "off",
+        "react/require-default-props": "off",
+        "react/no-unused-prop-types": "off"
     }
 }
