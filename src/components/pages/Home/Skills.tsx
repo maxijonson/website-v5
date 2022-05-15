@@ -26,6 +26,7 @@ import IconNodeJS from "../../../assets/images/skills/nodejs.png";
 import IconJava from "../../../assets/images/skills/java.svg";
 import IconCSharp from "../../../assets/images/skills/csharp.svg";
 import IconPython from "../../../assets/images/skills/python.png";
+import IconCpp from "../../../assets/images/skills/cpp.png";
 
 import IconMySql from "../../../assets/images/skills/mysql.svg";
 import IconOracleSql from "../../../assets/images/skills/oraclesql.png";
@@ -35,6 +36,8 @@ import IconFirebase from "../../../assets/images/skills/firebase.svg";
 
 import IconGoogleCloud from "../../../assets/images/skills/googlecloud.png";
 import IconAzure from "../../../assets/images/skills/azure.png";
+import IconHeroku from "../../../assets/images/skills/heroku.svg";
+import IconGithubActions from "../../../assets/images/skills/githubactions.png";
 
 import IconBash from "../../../assets/images/skills/bash.svg";
 import IconAndroid from "../../../assets/images/skills/android.svg";
@@ -106,6 +109,7 @@ const skills = [
             { name: "Java", proficiency: 3, logo: IconJava },
             { name: "C#", proficiency: 3, logo: IconCSharp },
             { name: "Python", proficiency: 3, logo: IconPython },
+            { name: "C++", proficiency: 2, logo: IconCpp },
         ],
     },
     {
@@ -121,8 +125,10 @@ const skills = [
     {
         group: "home:skills.group.cloud",
         items: [
-            { name: "Google Cloud", proficiency: 3, logo: IconGoogleCloud },
+            { name: "Google Cloud", proficiency: 2, logo: IconGoogleCloud },
             { name: "Azure DevOps", proficiency: 1, logo: IconAzure },
+            { name: "Heroku", proficiency: 4, logo: IconHeroku },
+            { name: "Github Actions", proficiency: 3, logo: IconGithubActions },
         ],
     },
     {
