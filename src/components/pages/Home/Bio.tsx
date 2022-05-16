@@ -17,8 +17,6 @@ const useStyles = createStyles((theme) => ({
         overflowX: "hidden",
         background: theme.colors.gray[0],
     },
-    content: {},
-    stack: {},
     text: {
         textAlign: "center",
         fontSize: theme.fontSizes.lg,
@@ -32,9 +30,9 @@ export default () => {
 
     return (
         <Container className={classes.container} fluid px={0}>
-            <Container className={classes.content}>
+            <Container>
                 <HomeTitle title={t("home:bio.title")} />
-                <Stack className={classes.stack} spacing="xl" mx="xl" mt="xl">
+                <Stack spacing="xl" mx="xl" mt="xl">
                     <Text className={classes.text}>{t("home:bio.text")}</Text>
                     <Center>
                         <Image width={200} radius={180} src={ProfilePicture} />

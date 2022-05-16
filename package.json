@@ -6,7 +6,7 @@
     "module": "dist/esm/index.js",
     "types": "dist/@types/index.d.ts",
     "scripts": {
-        "start": "vite serve src",
+        "start": "vite serve src --host",
         "watch": "nodemon",
         "clean": "rm -rf dist",
         "build": "npm-run-all clean && vite build",
@@ -50,6 +50,7 @@
         "react": "18.0.0",
         "react-dom": "18.0.0",
         "react-i18next": "^11.16.9",
+        "react-icons": "^4.3.1",
         "react-router-dom": "6.3.0"
     },
     "devDependencies": {

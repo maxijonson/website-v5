@@ -7,7 +7,7 @@
         "text": "I'm a software engineering student located in Montreal, Quebec. I have a great passion and experience for Web development, from Front-End to Back-End. My favorite programming language has always been JavaScript (more specifically, TypeScript) and I always get excited to try out new technologies to build something amazing! I love to learn new things and I'm always looking for ways to improve myself, such as self learning by trying them out, taking an online course or participating in a CTF.\n\nI am also a big Star Wars fan. Whenever a new series or season comes out, I'll be first to watch it! I love EDM music and my favorite artist is Illenium. I like putting some good jam on to fuel my coding fingers! I am also a huge dog lover and am the proud owner of an adorable Soft Coated Wheaten Terrier named \"Kingsley\"!"
     },
     "skills": {
-        "title": "My Skills",
+        "title": "Skills",
         "text": "Here's a list of my technical skills. I specialize in Web technologies, but I've learned a thing or two about other fields while I was in school and in past job experiences.",
         "group": {
             "web": "Web",
@@ -22,6 +22,20 @@
             "3": "Advanced - I can handle projects with this!",
             "4": "Expert - I'm a ninja!",
             "5": "Master - I eat this every day!"
+        }
+    },
+    "projects": {
+        "title": "Projects",
+        "text": "Here's a few of the projects I've worked on. You can see the full list on my <0>{{github}}</0> profile, but these are the ones I am most proud of. Even if some of these were eventually left unfinished (like most my repos, oops!), I still learned a lot from them.",
+        "short": {
+            "nuclui": "A React UI framework, built with TypeScript, to make your developement easier so you can give more focus on your app and less on the design!",
+            "genft": "Generate NFT collections by composing multiple layers together.",
+            "intellibot": "The ultimate multipurpose Discord bot.",
+            "punchbot": "Minimalist Discord bot to keep track of time worked on projects.",
+            "codelock": "Minecraft plugin to lock entities with an \"enter and forget\" code lock. Inspired by Rust's code lock.",
+            "tinderbullseye": "Find the people who liked you on Tinder, without Gold. (Patched by Tinder)",
+            "react": "Have an audio visualizer as your desktop wallpaper. Includes 100+ customizable options.",
+            "cuisto": "Restaurant system to manage inventory, suppliers and orders."
         }
     }
 }

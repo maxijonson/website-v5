@@ -66,7 +66,6 @@ const useStyles = createStyles((theme) => ({
             height: "500px",
         },
     },
-    content: {},
     title: {
         marginTop: "100px",
     },
@@ -76,7 +75,9 @@ const useStyles = createStyles((theme) => ({
         whiteSpace: "pre-line",
     },
     groupTitle: {
-        marginTop: "0px !important",
+        h2: {
+            marginTop: "0px",
+        },
     },
     skillText: {
         maxWidth: "unset",
@@ -149,78 +150,76 @@ export default () => {
     return (
         <Container className={classes.container} fluid>
             <div className={classes.transitionner} />
-            <Container className={classes.content}>
-                <div className={classes.title}>
-                    <HomeTitle title={t("home:skills.title")} />
-                    <Text className={classes.text}>
-                        {t("home:skills.text")}
-                    </Text>
-                    <SimpleGrid
-                        cols={3}
-                        mt="lg"
-                        breakpoints={[
-                            { maxWidth: theme.breakpoints.md, cols: 2 },
-                            { maxWidth: theme.breakpoints.sm, cols: 1 },
-                        ]}
-                    >
-                        {_.map(skills, ({ group, items }) => (
-                            <Card key={group} shadow="sm" withBorder>
-                                <Stack>
-                                    <HomeTitle
-                                        className={classes.groupTitle}
-                                        order={2}
-                                        title={t(group)}
-                                        align="left"
-                                    />
-                                    {_.map(items, (item) => (
-                                        <Group key={item.name} grow noWrap>
-                                            <Text className={classes.skillText}>
-                                                {item.name}
-                                            </Text>
-                                            <Tooltip
-                                                className={classes.skillTooltip}
-                                                label={t(
-                                                    `home:skills.proficiency.${item.proficiency}`
+            <Container>
+                <HomeTitle
+                    className={classes.title}
+                    title={t("home:skills.title")}
+                />
+                <Text className={classes.text}>{t("home:skills.text")}</Text>
+                <SimpleGrid
+                    cols={3}
+                    mt="lg"
+                    breakpoints={[
+                        { maxWidth: theme.breakpoints.md, cols: 2 },
+                        { maxWidth: theme.breakpoints.sm, cols: 1 },
+                    ]}
+                >
+                    {_.map(skills, ({ group, items }) => (
+                        <Card key={group} shadow="sm" withBorder>
+                            <Stack>
+                                <HomeTitle
+                                    className={classes.groupTitle}
+                                    order={2}
+                                    title={t(group)}
+                                    align="left"
+                                />
+                                {_.map(items, (item) => (
+                                    <Group key={item.name} grow noWrap>
+                                        <Text className={classes.skillText}>
+                                            {item.name}
+                                        </Text>
+                                        <Tooltip
+                                            className={classes.skillTooltip}
+                                            label={t(
+                                                `home:skills.proficiency.${item.proficiency}`
+                                            )}
+                                            withArrow
+                                            transition="pop"
+                                        >
+                                            <Group spacing={1}>
+                                                {_.times(
+                                                    item.proficiency,
+                                                    (i) => (
+                                                        <Image
+                                                            key={i}
+                                                            radius={0}
+                                                            width="16px"
+                                                            src={item.logo}
+                                                        />
+                                                    )
                                                 )}
-                                                withArrow
-                                                arrowDistance={10}
-                                                transition="pop"
-                                            >
-                                                <Group spacing={1}>
-                                                    {_.times(
-                                                        item.proficiency,
-                                                        (i) => (
-                                                            <Image
-                                                                key={i}
-                                                                radius={0}
-                                                                width="16px"
-                                                                src={item.logo}
-                                                            />
-                                                        )
-                                                    )}
-                                                    {_.times(
-                                                        5 - item.proficiency,
-                                                        (i) => (
-                                                            <Image
-                                                                key={i}
-                                                                className={
-                                                                    classes.disabledProficiency
-                                                                }
-                                                                radius={0}
-                                                                width="16px"
-                                                                src={item.logo}
-                                                            />
-                                                        )
-                                                    )}
-                                                </Group>
-                                            </Tooltip>
-                                        </Group>
-                                    ))}
-                                </Stack>
-                            </Card>
-                        ))}
-                    </SimpleGrid>
-                </div>
+                                                {_.times(
+                                                    5 - item.proficiency,
+                                                    (i) => (
+                                                        <Image
+                                                            key={i}
+                                                            className={
+                                                                classes.disabledProficiency
+                                                            }
+                                                            radius={0}
+                                                            width="16px"
+                                                            src={item.logo}
+                                                        />
+                                                    )
+                                                )}
+                                            </Group>
+                                        </Tooltip>
+                                    </Group>
+                                ))}
+                            </Stack>
+                        </Card>
+                    ))}
+                </SimpleGrid>
             </Container>
         </Container>
     );

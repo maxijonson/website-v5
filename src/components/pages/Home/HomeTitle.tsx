@@ -39,8 +39,8 @@ export default ({
 }: HomeTitleProps) => {
     const { classes } = useStyles({ color, align });
     return (
-        <div>
-            <Title className={`${classes.title} ${className}`} order={order}>
+        <div className={className}>
+            <Title className={classes.title} order={order}>
                 {title}
             </Title>
             <Divider size="xl" color={dividerColor} mb="md" />
