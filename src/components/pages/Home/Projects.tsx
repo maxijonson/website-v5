@@ -59,7 +59,7 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-const projects = [
+const PROJECTS = [
     {
         name: "Nuclui",
         short: "home:projects.short.nuclui",
@@ -225,7 +225,7 @@ export default () => {
                         { maxWidth: theme.breakpoints.sm, cols: 1 },
                     ]}
                 >
-                    {_.map(projects, ({ name, short, image, links, cover }) => (
+                    {_.map(PROJECTS, ({ name, short, image, links, cover }) => (
                         <Card key={name} shadow="sm" p="lg" withBorder>
                             <Card.Section
                                 className={classes.projectImageWrapper}

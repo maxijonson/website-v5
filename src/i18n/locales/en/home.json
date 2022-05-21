@@ -37,5 +37,48 @@
             "react": "Have an audio visualizer as your desktop wallpaper. Includes 100+ customizable options.",
             "cuisto": "Restaurant system to manage inventory, suppliers and orders."
         }
+    },
+    "experience": {
+        "title": "Experience",
+        "text": "Here's an overview of my past experiences as a developer. Before starting to work in this field, while I was just starting as a student, I worked two and a half years as a cashier at Canada's renowned coffee shop, Tim Horton's.",
+        "jobs": {
+            "desjardins": {
+                "description": "The Desjardins Group is a Canadian financial services cooperative and the largest federation of credit unions in North America.",
+                "position": "IT Security Advisor Intern"
+            },
+            "ipnos": {
+                "description": "Ipnos is a leading wellness app development studio. They're the creator of the sleep & relaxation app BetterSleep (formerly Relax Melodies).",
+                "position": "Full-Stack Developer Intern",
+                "points": [
+                    "Create a rich user interface in a Web app environment using Angular.",
+                    "Create Back-End services using cloud functions that are used by the Web app.",
+                    "Research and analyze the feasability of new development projects."
+                ]
+            },
+            "comact": {
+                "name": "Comact (Division of Bid Group)", 
+                "description": "Comact designs and manufactures sawmill and planer mill equipment. They offer the most comprehensive range of products on the market.",
+                "position": [
+                    "Front-End Developer Intern (University)",
+                    "Front-End Developer",
+                    "Front-End Developer Intern (Cegep)"
+                ],
+                "points": [
+                    [
+                        "Create helpful tools to generate data and send it to an artificial intelligence system.",
+                        "Upgrade technologies to the latest version and implement their new features."
+                    ],
+                    [
+                        "Validate client user interface requirements.",
+                        "Evaluate the impact of needs across available systems."
+                    ],
+                    [
+                        "Maintain and improve the current web applications using React.",
+                        "Create new web applications using React.",
+                        "Apply Agile development practices."
+                    ]
+                ]
+            }
+        }
     }
 }

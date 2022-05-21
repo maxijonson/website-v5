@@ -91,7 +91,7 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-const skills = [
+const SKILLS = [
     {
         group: "home:skills.group.web",
         items: [
@@ -164,7 +164,7 @@ export default () => {
                         { maxWidth: theme.breakpoints.sm, cols: 1 },
                     ]}
                 >
-                    {_.map(skills, ({ group, items }) => (
+                    {_.map(SKILLS, ({ group, items }) => (
                         <Card key={group} shadow="sm" withBorder>
                             <Stack>
                                 <HomeTitle
