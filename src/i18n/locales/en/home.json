@@ -80,5 +80,22 @@
                 ]
             }
         }
+    },
+    "education": {
+        "title": "Education",
+        "text": "The following shows all the schools and courses I've taken relevant to my software developement career.",
+        "name": {
+            "bengse": "Bachelor of Engineering, Software Engineering",
+            "compsci": "Computer Science",
+            "angular": "Angular - The Complete Guide",
+            "python": "Complete Python 3 Bootcamp",
+            "react": "The Complete React Web Developer Course",
+            "node": "The Complete Node.js Developer Course"
+        },
+        "type": {
+            "university": "University",
+            "college": "College",
+            "online": "Online Course"
+        }
     }
 }

@@ -12,5 +12,9 @@
         "October",
         "November",
         "December"
-    ]
+    ],
+    "time": {
+        "present": "Present",
+        "expected": "Expected"
+    }
 }

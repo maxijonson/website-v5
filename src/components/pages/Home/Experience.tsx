@@ -138,7 +138,7 @@ const getDate = (date: Date, months: string[]) => {
 
 export default () => {
     const { classes } = useStyles();
-    const { t } = useTranslation(["home"]);
+    const { t } = useTranslation(["translation", "home"]);
     const jobs = useJobs();
     const months = useMonths();
 
@@ -153,7 +153,7 @@ export default () => {
                 <Text className={classes.text}>
                     {t("home:experience.text")}
                 </Text>
-                <Container size="xs">
+                <Container size="sm">
                     <Timeline
                         className={classes.timeline}
                         mt="xl"
@@ -176,7 +176,7 @@ export default () => {
                                     {" - "}
                                     {job.to
                                         ? getDate(job.to, months)
-                                        : "Present"}
+                                        : t("time.present")}
                                 </Text>
                                 <Text className={classes.jobPosition} size="md">
                                     {job.position}
