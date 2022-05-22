@@ -41,6 +41,15 @@ const useStyles = createStyles((theme) => ({
         fontSize: theme.fontSizes.lg,
     },
     image: {
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+
+        [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
+            width: "unset",
+            display: "block",
+        },
+
         "& img": {
             marginBottom: 0,
         },
