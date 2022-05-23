@@ -1,5 +1,104 @@
 {
     "landing": {
         "subtitle": "Étudiant en génie logiciel"
+    },
+    "bio": {
+        "title": "À propos de moi",
+        "text": "Je suis un étudiant en génie logiciel situé à Montréal, au Québec. J'ai une grande passion et expérience pour le développement Web, du Front-End au Back-End. Mon langage de programmation préféré a toujours été JavaScript (plus précisément, TypeScript) et je suis toujours enthousiaste à l'idée d'essayer de nouvelles technologies pour construire quelque chose d'incroyable ! J'adore apprendre de nouvelles choses et je suis toujours à la recherche de moyens pour m'améliorer, comme l'auto-apprentissage en les essayant, en suivant un cours en ligne ou en participant à un CTF.\n\nJe suis également un grand fan de Star Wars. Dès qu'une nouvelle série ou saison sort, je suis le premier à la regarder ! J'adore la musique EDM et mon artiste préféré est Illenium. J'aime mettre de la bonne musique pour alimenter mes doigts de programmeur ! Je suis également un grand amateur de chiens et je suis l'heureux propriétaire d'un adorable Wheaten Terrier à poil doux nommé Kingsley !"
+    },
+    "skills": {
+        "title": "Compétences",
+        "text": "Voici une liste de mes compétences techniques. Je suis spécialisé dans les technologies Web, mais j'ai appris une ou deux choses sur d'autres domaines pendant mes études et dans mes expériences professionnelles passées.",
+        "group": {
+            "web": "Web",
+            "application": "Application",
+            "database": "Base de données",
+            "cloud": "Infonuagique",
+            "other": "Autre"
+        },
+        "proficiency": {
+            "1": "Débutant - J'ai mis mon orteil dans l'eau.",
+            "2": "Intermédiaire - J'ai appris une chose ou deux.",
+            "3": "Avancé - Je peux gérer des projets avec ça !",
+            "4": "Expert - Je suis un ninja !",
+            "5": "Maître - Je mange ça tous les jours !"
+        }
+    },
+    "projects": {
+        "title": "Projets",
+        "text": "Voici quelques-uns des projets sur lesquels j'ai travaillé. Vous pouvez voir la liste complète sur mon profil <0>{{github}}</0>, mais ce sont ceux dont je suis le plus fier. Même si certains d'entre eux ont finalement été laissés inachevés (comme la plupart de mes repos, oups !), j'ai quand même beaucoup appris d'eux.",
+        "short": {
+            "nuclui": "Un framework React, construit avec TypeScript, pour faciliter votre développement et vous permettre de vous concentrer davantage sur votre application et moins sur le design !",
+            "genft": "Générer des collections NFT en composant plusieurs couches ensemble.",
+            "intellibot": "L'ultime robot polyvalent pour Discord.",
+            "punchbot": "Un robot Discord minimaliste pour suivre le temps passé sur les projets.",
+            "codelock": "Plugin Minecraft permettant de verrouiller les entités avec un verrou à code \"entrer et oublier\". Inspiré par le code lock de Rust.",
+            "tinderbullseye": "Trouvez les personnes qui vous ont aimé sur Tinder, sans Gold. (Patché par Tinder)",
+            "react": "Faites d'un visualiseur audio votre fond d'écran. Comprend plus de 100 options personnalisables.",
+            "cuisto": "Système pour restaurants permettant de gérer les stocks, les fournisseurs et les commandes."
+        }
+    },
+    "experience": {
+        "title": "Expérience",
+        "text": "Voici un aperçu de mes expériences passées en tant que développeur. Avant de commencer à travailler dans ce domaine, alors que je commençais tout juste à étudier, j'ai travaillé deux ans et demi comme caissier dans le célèbre café canadien Tim Horton's.",
+        "jobs": {
+            "desjardins": {
+                "description": "Le Mouvement Desjardins est une coopérative canadienne de services financiers et la plus importante fédération de coopératives de crédit en Amérique du Nord.",
+                "position": "Conseiller en sécurité TI stagiaire"
+            },
+            "ipnos": {
+                "description": "Ipnos est un studio de développement d'applications de bien-être de premier plan. Il est le créateur de l'application de sommeil et de relaxation BetterSleep (anciennement Relax Melodies).",
+                "position": "Développeur Full-Stack stagiaire",
+                "points": [
+                    "Créer une interface utilisateur riche dans un environnement d'application Web à l'aide d'Angular.",
+                    "Créez des services Back-End en utilisant les fonctions du nuage qui sont utilisées par l'application Web.",
+                    "Rechercher et analyser la faisabilité de nouveaux projets de développement."
+                ]
+            },
+            "comact": {
+                "description": "Comact conçoit et fabrique des équipements pour les scieries et les usines de rabotage. Ils offrent la gamme de produits la plus complète sur le marché.",
+                "position": [
+                    "Développeur Front-End stagiaire (Université)",
+                    "Développeur Front-End",
+                    "Développeur Front-End stagiaire (Cégep)"
+                ],
+                "points": [
+                    [
+                        "Créez des outils utiles pour générer des données et les envoyer à un système d'intelligence artificielle.",
+                        "Mettre à niveau les technologies vers la dernière version et mettre en œuvre leurs nouvelles fonctionnalités."
+                    ],
+                    [
+                        "Valider les exigences de l'interface utilisateur du client.",
+                        "Évaluer l'impact des besoins sur l'ensemble des systèmes disponibles."
+                    ],
+                    [
+                        "Maintenir et améliorer les applications web actuelles en utilisant React.",
+                        "Créez de nouvelles applications web en utilisant React.",
+                        "Appliquer les pratiques de développement Agile."
+                    ]
+                ]
+            }
+        }
+    },
+    "education": {
+        "title": "Éducation",
+        "text": "Le tableau suivant montre toutes les écoles et tous les cours que j'ai suivis en rapport avec ma carrière de développeur de logiciels.",
+        "name": {
+            "bengse": "Baccalauréat en génie, génie logiciel",
+            "compsci": "Techniques de l'informatique",
+            "angular": "Angular - Le guide complet",
+            "python": "Bootcamp complet Python 3",
+            "react": "Le cours complet pour les développeurs Web React",
+            "node": "Le cours complet pour les développeurs Node.js"
+        },
+        "type": {
+            "university": "Université",
+            "college": "Cégep",
+            "online": "Cours en ligne"
+        }
+    },
+    "contact": {
+        "title": "Contact",
+        "text": "Je ne suis pas actuellement à la recherche de nouvelles opportunités, mais si vous voulez entrer en contact, n'hésitez pas à me joindre à <0>{{email}}</0> ou à me trouver sur mes différents réseaux sociaux !"
     }
 }

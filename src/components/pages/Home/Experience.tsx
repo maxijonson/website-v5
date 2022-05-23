@@ -79,7 +79,7 @@ const useJobs = () => {
             ],
         },
         {
-            company: t("home:experience.jobs.comact.name"),
+            company: "Comact",
             companyDescription: t("home:experience.jobs.comact.description"),
             logo: LogoComact,
             from: new Date(2020, 0),
