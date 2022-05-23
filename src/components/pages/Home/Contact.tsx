@@ -54,10 +54,10 @@ const Social = ({
     );
 };
 
-export default () => {
+export default React.forwardRef<HTMLDivElement>((_props, ref) => {
     const { classes } = useStyles();
     return (
-        <Container className={classes.container} fluid>
+        <Container ref={ref} className={classes.container} fluid>
             <Container>
                 <HomeTitle title={t("home:contact.title")} />
                 <Text className={classes.text}>
@@ -94,4 +94,4 @@ export default () => {
             </Container>
         </Container>
     );
-};
+});

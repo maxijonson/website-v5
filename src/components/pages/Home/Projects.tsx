@@ -187,13 +187,13 @@ const TextSVG = ({ text }: { text: string }) => {
     );
 };
 
-export default () => {
+export default React.forwardRef<HTMLDivElement>((_props, ref) => {
     const { classes } = useStyles();
     const theme = useMantineTheme();
     const { t } = useTranslation(["home"]);
 
     return (
-        <Container className={classes.container} fluid pb="xl">
+        <Container ref={ref} className={classes.container} fluid pb="xl">
             <Transitionner
                 type="slantdesc"
                 from={theme.colors.gray[2]}
@@ -266,4 +266,4 @@ export default () => {
             </Container>
         </Container>
     );
-};
+});

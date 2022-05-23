@@ -130,7 +130,7 @@ const getDate = (date: Date, months: string[]) => {
     return `${months[date.getMonth()]} ${date.getFullYear()}`;
 };
 
-export default () => {
+export default React.forwardRef<HTMLDivElement>((_props, ref) => {
     const { classes } = useStyles();
     const theme = useMantineTheme();
     const { t } = useTranslation(["translation", "home"]);
@@ -138,7 +138,7 @@ export default () => {
     const months = useMonths();
 
     return (
-        <Container className={classes.container} fluid pb="xl">
+        <Container ref={ref} className={classes.container} fluid pb="xl">
             <Transitionner
                 type="slantasc"
                 from={theme.colors.gray[0]}
@@ -207,4 +207,4 @@ export default () => {
             </Container>
         </Container>
     );
-};
+});

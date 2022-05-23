@@ -138,7 +138,7 @@ const useGetDateRange = () => {
     };
 };
 
-export default () => {
+export default React.forwardRef<HTMLDivElement>((_props, ref) => {
     const { t } = useTranslation(["home"]);
     const theme = useMantineTheme();
     const { classes } = useStyles();
@@ -146,7 +146,7 @@ export default () => {
     const getDateRange = useGetDateRange();
 
     return (
-        <Container className={classes.container} fluid pb="xl">
+        <Container ref={ref} className={classes.container} fluid pb="xl">
             <Transitionner
                 type="slantdesc"
                 from={theme.colors.gray[2]}
@@ -196,4 +196,4 @@ export default () => {
             />
         </Container>
     );
-};
+});
