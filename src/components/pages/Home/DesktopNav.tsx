@@ -2,6 +2,7 @@ import {
     Anchor,
     Container,
     createStyles,
+    Divider,
     Group,
     Header,
     useMantineTheme,
@@ -13,6 +14,7 @@ import {
 } from "@mantine/hooks";
 import _ from "lodash";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 interface NavProps {
     headers: {
@@ -82,6 +84,11 @@ const useStyles = createStyles(
                 },
             },
         },
+        divider: {
+            zIndex: 100,
+            margin: "auto 0",
+            height: "32px",
+        },
     })
 );
 
@@ -90,16 +97,15 @@ export default ({ headers }: NavProps) => {
     const { height, width } = useViewportSize();
     const [{ y }] = useWindowScroll();
     const { classes } = useStyles({ showBackground: y >= height - 60 });
+    const { i18n } = useTranslation();
 
-    if (width < theme.breakpoints.sm) {
-        return null;
-    }
+    console.info(i18n.language);
 
     return (
         <Header className={classes.root} height={60} p={0} fixed>
             <Container className={classes.container}>
                 <Group className={classes.containerGroup} position="right">
-                    <Group>
+                    <Group hidden={width < theme.breakpoints.sm}>
                         {_.map(headers, (header) => (
                             <Anchor
                                 key={header.name}
@@ -113,6 +119,27 @@ export default ({ headers }: NavProps) => {
                                 {header.name}
                             </Anchor>
                         ))}
+                        <Divider
+                            className={classes.divider}
+                            orientation="vertical"
+                            color="dark"
+                        />
+                    </Group>
+                    <Group>
+                        <Anchor
+                            className={classes.header}
+                            size="sm"
+                            variant="text"
+                            transform="uppercase"
+                            weight="bold"
+                            onClick={() =>
+                                i18n.changeLanguage(
+                                    i18n.language === "en" ? "fr" : "en"
+                                )
+                            }
+                        >
+                            {i18n.language === "en" ? "FR" : "EN"}
+                        </Anchor>
                     </Group>
                 </Group>
             </Container>
