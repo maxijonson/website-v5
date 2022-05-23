@@ -56,7 +56,7 @@
                 ]
             },
             "comact": {
-                "name": "Comact", 
+                "name": "Comact",
                 "description": "Comact designs and manufactures sawmill and planer mill equipment. They offer the most comprehensive range of products on the market.",
                 "position": [
                     "Front-End Developer Intern (University)",
@@ -97,5 +97,9 @@
             "college": "College",
             "online": "Online Course"
         }
+    },
+    "contact": {
+        "title": "Contact",
+        "text": "I'm not currently looking for new opportunities, but if you want to get in touch, feel free to reach out to me at <0>{{email}}</0> or find me on my different socials!"
     }
 }

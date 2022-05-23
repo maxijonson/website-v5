@@ -21,7 +21,7 @@ import ImageNode from "../../../assets/images/education/node.jpg";
 const useStyles = createStyles((theme) => ({
     container: {
         position: "relative",
-        overflowX: "hidden",
+        overflow: "hidden",
         minHeight: "100vh",
         background: theme.colors.gray[0],
     },
@@ -32,6 +32,25 @@ const useStyles = createStyles((theme) => ({
         left: 0,
         width: "100%",
         height: "100px",
+    },
+    endTransitionner: {
+        position: "absolute",
+        background: theme.colors.gray[2],
+        left: "50%",
+        transform: "translateX(-50%)",
+        borderRadius: "100% 100% 0 0",
+        bottom: "-150px",
+        width: "150vw",
+        height: "200px",
+
+        [`@media (min-width: ${theme.breakpoints.md}px)`]: {
+            bottom: "-436px",
+            width: "150vw",
+            height: "1000px",
+        },
+    },
+    content: {
+        marginBottom: "100px",
     },
     title: {
         marginTop: "100px",
@@ -150,7 +169,7 @@ export default () => {
     return (
         <Container className={classes.container} fluid>
             <div className={classes.transitionner} />
-            <Container>
+            <Container className={classes.content}>
                 <HomeTitle
                     className={classes.title}
                     title={t("home:education.title")}
@@ -187,6 +206,7 @@ export default () => {
                     </Stack>
                 </Container>
             </Container>
+            <div className={classes.endTransitionner} />
         </Container>
     );
 };

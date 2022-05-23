@@ -1,5 +1,6 @@
 import React from "react";
 import Bio from "./Bio";
+import Contact from "./Contact";
 import Education from "./Education";
 import Experience from "./Experience";
 import Landing from "./Landing";
@@ -15,6 +16,7 @@ export default () => {
             <Projects />
             <Experience />
             <Education />
+            <Contact />
         </>
     );
 };
