@@ -6,7 +6,7 @@ import Contact from "./Contact";
 import Education from "./Education";
 import Experience from "./Experience";
 import Landing from "./Landing";
-import DesktopNav from "./DesktopNav";
+import Nav from "./Nav";
 import Projects from "./Projects";
 import Skills from "./Skills";
 
@@ -31,7 +31,7 @@ export default () => {
 
     return (
         <>
-            <DesktopNav headers={headers} />
+            <Nav headers={headers} />
             <Landing />
             <Bio ref={bio.targetRef} />
             <Skills ref={skills.targetRef} />
