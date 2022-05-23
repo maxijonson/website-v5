@@ -22,23 +22,23 @@ import IconJavaScript from "../../../assets/images/skills/javascript.svg";
 import IconTypeScript from "../../../assets/images/skills/typescript.svg";
 import IconReact from "../../../assets/images/skills/react.svg";
 import IconAngular from "../../../assets/images/skills/angular.svg";
-import IconNodeJS from "../../../assets/images/skills/nodejs.png?webp";
+import IconNodeJS from "../../../assets/images/skills/nodejs.png";
 
 import IconJava from "../../../assets/images/skills/java.svg";
 import IconCSharp from "../../../assets/images/skills/csharp.svg";
-import IconPython from "../../../assets/images/skills/python.png?webp";
-import IconCpp from "../../../assets/images/skills/cpp.png?webp";
+import IconPython from "../../../assets/images/skills/python.png";
+import IconCpp from "../../../assets/images/skills/cpp.png";
 
 import IconMySql from "../../../assets/images/skills/mysql.svg";
-import IconOracleSql from "../../../assets/images/skills/oraclesql.png?webp";
-import IconSqlServer from "../../../assets/images/skills/sqlserver.png?webp";
-import IconMongoDB from "../../../assets/images/skills/mongodb.png?webp";
+import IconOracleSql from "../../../assets/images/skills/oraclesql.png";
+import IconSqlServer from "../../../assets/images/skills/sqlserver.png";
+import IconMongoDB from "../../../assets/images/skills/mongodb.png";
 import IconFirebase from "../../../assets/images/skills/firebase.svg";
 
-import IconGoogleCloud from "../../../assets/images/skills/googlecloud.png?webp";
-import IconAzure from "../../../assets/images/skills/azure.png?webp";
+import IconGoogleCloud from "../../../assets/images/skills/googlecloud.png";
+import IconAzure from "../../../assets/images/skills/azure.png";
 import IconHeroku from "../../../assets/images/skills/heroku.svg";
-import IconGithubActions from "../../../assets/images/skills/githubactions.png?webp";
+import IconGithubActions from "../../../assets/images/skills/githubactions.png";
 
 import IconBash from "../../../assets/images/skills/bash.svg";
 import IconAndroid from "../../../assets/images/skills/android.svg";

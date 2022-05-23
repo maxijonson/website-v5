@@ -3,10 +3,20 @@ import { imagetools } from "vite-imagetools";
 import { resolve } from "path";
 import react from "@vitejs/plugin-react";
 
-const PRESERVED = ["Tristan.jpg"];
+const PRESERVED_NAMES = ["Tristan.jpg"];
+
+const defaultDirectives = new URLSearchParams();
+defaultDirectives.set("format", "webp");
+defaultDirectives.set("quality", "80");
 
 export default defineConfig({
-    plugins: [react(), imagetools()],
+    plugins: [
+        react(),
+        imagetools({
+            include: "**/*.{jpeg,jpg,png,webp}*",
+            defaultDirectives,
+        }),
+    ],
     root: "src",
     build: {
         outDir: "../dist",
@@ -15,8 +25,9 @@ export default defineConfig({
             input: resolve(__dirname, "src/index.html"),
             output: {
                 assetFileNames: (chunkInfo) => {
-                    console.info("chunk", chunkInfo.name);
-                    if (PRESERVED.some((p) => chunkInfo.name?.endsWith(p))) {
+                    if (
+                        PRESERVED_NAMES.some((p) => chunkInfo.name?.endsWith(p))
+                    ) {
                         return "assets/[name].[ext]";
                     }
                     return "assets/[name].[hash].[ext]";
