@@ -9,7 +9,7 @@
         "start": "vite serve src --host",
         "watch": "nodemon",
         "clean": "rm -rf dist",
-        "build": "npm-run-all clean && vite build",
+        "build": "npm-run-all clean && vite build && ts-node src/scripts/post-build.ts",
         "build:cjs": "tsc -p tsconfig.prod.json --module CommonJS --outDir dist/cjs && cp .build/package.cjs.json dist/cjs/package.json",
         "build:esm": "tsc -p tsconfig.prod.json && cp .build/package.esm.json dist/esm/package.json",
         "build:types": "tsc -p tsconfig.prod.json --declaration --declarationMap --emitDeclarationOnly --declarationDir dist/@types",

@@ -5,16 +5,21 @@ import react from "@vitejs/plugin-react";
 
 const PRESERVED_NAMES = ["Tristan.jpg"];
 
-const defaultDirectives = new URLSearchParams();
-defaultDirectives.set("format", "webp");
-defaultDirectives.set("quality", "80");
+const defaultDirectives = {
+    webp: new URLSearchParams({
+        format: "webp",
+        quality: "80",
+    }),
+};
 
 export default defineConfig({
     plugins: [
         react(),
         imagetools({
             include: "**/*.{jpeg,jpg,png,webp}*",
-            defaultDirectives,
+            defaultDirectives: (_url) => {
+                return defaultDirectives.webp;
+            },
         }),
     ],
     root: "src",
