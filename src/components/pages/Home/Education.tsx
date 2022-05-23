@@ -168,6 +168,7 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                                         radius={0}
                                         width="128px"
                                         src={item.image}
+                                        alt={item.location}
                                     />
                                     <Stack spacing="xs">
                                         <Text size="lg" weight="bold">

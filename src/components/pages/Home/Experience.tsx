@@ -167,6 +167,8 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                                         radius="xl"
                                         size={BULLET_SIZE}
                                         src={job.logo}
+                                        title={job.company}
+                                        alt={job.company}
                                     />
                                 }
                             >

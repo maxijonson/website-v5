@@ -32,10 +32,12 @@ const useStyles = createStyles((theme) => ({
 const Social = ({
     icon: Icon,
     link,
+    title,
     noBlank = false,
 }: {
     icon: IconType;
     link: string;
+    title: string;
     noBlank?: boolean;
 }) => {
     const { classes } = useStyles();
@@ -48,6 +50,7 @@ const Social = ({
             className={classes.actionIcon}
             size="xl"
             p={5}
+            title={title}
         >
             <Icon size="100%" />
         </ActionIcon>
@@ -76,19 +79,23 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                     <Social
                         icon={FaLinkedinIn}
                         link="https://www.linkedin.com/in/tristan-chin/"
+                        title="Linked In"
                     />
                     <Social
                         icon={AiFillGithub}
                         link="https://github.com/maxijonson"
+                        title="Github"
                     />
                     <Social
                         icon={AiOutlineMail}
                         link="mailto:tristan.chin@chintristan.io"
+                        title="Email"
                         noBlank
                     />
                     <Social
                         icon={AiOutlineTwitter}
                         link="https://twitter.com/MaxiJonson"
+                        title="Twitter"
                     />
                 </Group>
             </Container>

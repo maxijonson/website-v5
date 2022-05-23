@@ -184,6 +184,7 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                                                             radius={0}
                                                             width="16px"
                                                             src={item.logo}
+                                                            alt={item.name}
                                                         />
                                                     )
                                                 )}
@@ -198,6 +199,7 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                                                             radius={0}
                                                             width="16px"
                                                             src={item.logo}
+                                                            alt={item.name}
                                                         />
                                                     )
                                                 )}

@@ -59,10 +59,12 @@ const PROJECTS = [
         image: ImageNuclui,
         links: [
             {
+                title: "Github",
                 icon: AiFillGithub,
                 url: "https://github.com/maxijonson/nuclui",
             },
             {
+                title: "NPM",
                 icon: DiNpm,
                 url: "https://www.npmjs.com/package/nuclui",
             },
@@ -73,10 +75,12 @@ const PROJECTS = [
         short: "home:projects.short.genft",
         links: [
             {
+                title: "Github",
                 icon: AiFillGithub,
                 url: "https://github.com/maxijonson/genft",
             },
             {
+                title: "NPM",
                 icon: DiNpm,
                 url: "https://www.npmjs.com/package/genft",
             },
@@ -89,6 +93,7 @@ const PROJECTS = [
         image: ImageIntellibot,
         links: [
             {
+                title: "Github",
                 icon: AiFillGithub,
                 url: "https://github.com/maxijonson/Intellibot",
             },
@@ -100,6 +105,7 @@ const PROJECTS = [
         image: ImagePunchBot,
         links: [
             {
+                title: "Github",
                 icon: AiFillGithub,
                 url: "https://github.com/maxijonson/PunchBot",
             },
@@ -110,10 +116,12 @@ const PROJECTS = [
         short: "home:projects.short.codelock",
         links: [
             {
+                title: "Github",
                 icon: AiFillGithub,
                 url: "https://github.com/maxijonson/code-lock",
             },
             {
+                title: "Spigot",
                 icon: FaFaucet,
                 url: "https://www.spigotmc.org/resources/code-lock.91058/",
             },
@@ -124,6 +132,7 @@ const PROJECTS = [
         short: "home:projects.short.tinderbullseye",
         links: [
             {
+                title: "Github",
                 icon: AiFillGithub,
                 url: "https://github.com/maxijonson/tinder-bullseye",
             },
@@ -136,6 +145,7 @@ const PROJECTS = [
         cover: true,
         links: [
             {
+                title: "Github",
                 icon: AiFillGithub,
                 url: "https://github.com/maxijonson/React---Wallpaper-Engine",
             },
@@ -147,6 +157,7 @@ const PROJECTS = [
         image: ImageCuisto,
         links: [
             {
+                title: "Github",
                 icon: AiFillGithub,
                 url: "https://github.com/maxijonson/Cuisto-public",
             },
@@ -231,9 +242,10 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                             >
                                 {image ? (
                                     <Image
-                                        src={image}
                                         height={160}
                                         fit={cover ? "cover" : "contain"}
+                                        src={image}
+                                        alt={name}
                                     />
                                 ) : (
                                     <TextSVG text={name} />
@@ -243,20 +255,27 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                                 <Text transform="uppercase" weight={600}>
                                     {name}
                                 </Text>
-                                <Group spacing={0}>
-                                    {_.map(links, ({ icon: Icon, url }) => (
-                                        <ActionIcon
-                                            key={url}
-                                            className={classes.actionIcon}
-                                            variant="transparent"
-                                            color="gray"
-                                            component="a"
-                                            href={url}
-                                            target="_blank"
-                                        >
-                                            <Icon />
-                                        </ActionIcon>
-                                    ))}
+                                <Group spacing="xs">
+                                    {_.map(
+                                        links,
+                                        ({ icon: Icon, url, title }) => (
+                                            <ActionIcon
+                                                key={url}
+                                                className={classes.actionIcon}
+                                                variant="hover"
+                                                color="blue"
+                                                component="a"
+                                                href={url}
+                                                target="_blank"
+                                                title={title}
+                                                size="md"
+                                                radius="xl"
+                                                p={2}
+                                            >
+                                                <Icon size="100%" />
+                                            </ActionIcon>
+                                        )
+                                    )}
                                 </Group>
                                 <Text>{t(short)}</Text>
                             </Stack>

@@ -10,7 +10,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import HomeTitle from "./HomeTitle";
 
-import ProfilePicture from "../../../assets/images/Tristan.jpg?webp";
+import ProfilePicture from "../../../assets/images/Tristan.jpg";
 
 const useStyles = createStyles((theme) => ({
     container: {
@@ -36,7 +36,12 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                 <Stack spacing="xl" mx="xl" mt="xl">
                     <Text className={classes.text}>{t("home:bio.text")}</Text>
                     <Center>
-                        <Image width={200} radius={180} src={ProfilePicture} />
+                        <Image
+                            width={200}
+                            radius={180}
+                            src={ProfilePicture}
+                            alt="Tristan Chin"
+                        />
                     </Center>
                 </Stack>
             </Container>

@@ -13,7 +13,7 @@ import Skills from "./Skills";
 export default () => {
     const { t } = useTranslation(["home"]);
 
-    const bio = useScrollIntoView<HTMLDivElement>();
+    const bio = useScrollIntoView<HTMLDivElement>({ offset: 50 });
     const skills = useScrollIntoView<HTMLDivElement>();
     const projects = useScrollIntoView<HTMLDivElement>();
     const experience = useScrollIntoView<HTMLDivElement>();

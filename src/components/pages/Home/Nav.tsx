@@ -147,6 +147,7 @@ const HeaderAnchor = ({
     const { classes } = useHeaderStyles();
     return (
         <Anchor
+            component="span"
             className={classes.header}
             size={size}
             variant="text"
@@ -207,6 +208,8 @@ export default ({ headers }: NavProps) => {
                             className={classes.burger}
                             opened={menuOpen}
                             onClick={() => toggleMenu()}
+                            title="Menu"
+                            name="menu"
                         />
 
                         <GroupedTransition
