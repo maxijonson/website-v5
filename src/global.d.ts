@@ -3,7 +3,22 @@ declare module "*.jpg" {
     export = value;
 }
 
+declare module "*.jpg?webp" {
+    const value: any;
+    export = value;
+}
+
 declare module "*.png" {
+    const value: any;
+    export = value;
+}
+
+declare module "*.png?webp" {
+    const value: any;
+    export = value;
+}
+
+declare module "*.webp" {
     const value: any;
     export = value;
 }

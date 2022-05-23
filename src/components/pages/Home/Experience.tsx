@@ -17,9 +17,9 @@ import { BiTask } from "react-icons/bi";
 import HomeTitle from "./HomeTitle";
 import Transitionner from "../../../components/Transitionner";
 
-import LogoDesjardins from "../../../assets/images/experience/desjardins.jpg";
-import LogoIpnos from "../../../assets/images/experience/ipnos.jpg";
-import LogoComact from "../../../assets/images/experience/comact.jpg";
+import LogoDesjardins from "../../../assets/images/experience/desjardins.jpg?webp";
+import LogoIpnos from "../../../assets/images/experience/ipnos.jpg?webp";
+import LogoComact from "../../../assets/images/experience/comact.jpg?webp";
 
 const BULLET_SIZE = 25;
 
