@@ -42,7 +42,7 @@ const useStyles = createStyles((theme, { from, to }: UseStylesParams) => ({
         [`@media (min-width: ${theme.breakpoints.md}px)`]: {
             bottom: "-436px",
             width: "150vw",
-            height: "1000px",
+            height: "500px",
         },
     },
     rounddown: {
