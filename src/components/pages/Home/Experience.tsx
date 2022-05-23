@@ -8,12 +8,14 @@ import {
     ThemeIcon,
     Timeline,
     TimelineItem,
+    useMantineTheme,
 } from "@mantine/core";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import _ from "lodash";
 import { BiTask } from "react-icons/bi";
 import HomeTitle from "./HomeTitle";
+import Transitionner from "../../../components/Transitionner";
 
 import LogoDesjardins from "../../../assets/images/experience/desjardins.jpg";
 import LogoIpnos from "../../../assets/images/experience/ipnos.jpg";
@@ -28,16 +30,8 @@ const useStyles = createStyles((theme) => ({
         minHeight: "100vh",
         background: theme.colors.gray[2],
     },
-    transitionner: {
-        position: "absolute",
-        background: `linear-gradient(to right bottom, ${theme.colors.gray[0]} 49%, ${theme.colors.gray[2]} 50%)`,
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100px",
-    },
     title: {
-        marginTop: "100px",
+        marginTop: "calc(5vh + 12px)",
     },
     text: {
         textAlign: "center",
@@ -138,13 +132,18 @@ const getDate = (date: Date, months: string[]) => {
 
 export default () => {
     const { classes } = useStyles();
+    const theme = useMantineTheme();
     const { t } = useTranslation(["translation", "home"]);
     const jobs = useJobs();
     const months = useMonths();
 
     return (
-        <Container className={classes.container} fluid>
-            <div className={classes.transitionner} />
+        <Container className={classes.container} fluid pb="xl">
+            <Transitionner
+                type="slantasc"
+                from={theme.colors.gray[0]}
+                to={theme.colors.gray[2]}
+            />
             <Container>
                 <HomeTitle
                     className={classes.title}

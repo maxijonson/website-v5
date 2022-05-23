@@ -6,10 +6,12 @@ import {
     Image,
     Stack,
     Text,
+    useMantineTheme,
 } from "@mantine/core";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import HomeTitle from "./HomeTitle";
+import Transitionner from "../../../components/Transitionner";
 
 import ImageETS from "../../../assets/images/education/ets.png";
 import ImageCLG from "../../../assets/images/education/clg.png";
@@ -25,35 +27,11 @@ const useStyles = createStyles((theme) => ({
         minHeight: "100vh",
         background: theme.colors.gray[0],
     },
-    transitionner: {
-        position: "absolute",
-        background: `linear-gradient(to left bottom, ${theme.colors.gray[2]} 49%, ${theme.colors.gray[0]} 50%)`,
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100px",
-    },
-    endTransitionner: {
-        position: "absolute",
-        background: theme.colors.gray[2],
-        left: "50%",
-        transform: "translateX(-50%)",
-        borderRadius: "100% 100% 0 0",
-        bottom: "-150px",
-        width: "150vw",
-        height: "200px",
-
-        [`@media (min-width: ${theme.breakpoints.md}px)`]: {
-            bottom: "-436px",
-            width: "150vw",
-            height: "1000px",
-        },
-    },
     content: {
         marginBottom: "100px",
     },
     title: {
-        marginTop: "100px",
+        marginTop: "calc(5vh + 12px)",
     },
     text: {
         textAlign: "center",
@@ -162,13 +140,18 @@ const useGetDateRange = () => {
 
 export default () => {
     const { t } = useTranslation(["home"]);
+    const theme = useMantineTheme();
     const { classes } = useStyles();
     const education = useEducation();
     const getDateRange = useGetDateRange();
 
     return (
-        <Container className={classes.container} fluid>
-            <div className={classes.transitionner} />
+        <Container className={classes.container} fluid pb="xl">
+            <Transitionner
+                type="slantdesc"
+                from={theme.colors.gray[2]}
+                to={theme.colors.gray[0]}
+            />
             <Container className={classes.content}>
                 <HomeTitle
                     className={classes.title}
@@ -206,7 +189,11 @@ export default () => {
                     </Stack>
                 </Container>
             </Container>
-            <div className={classes.endTransitionner} />
+            <Transitionner
+                type="roundup"
+                from={theme.colors.gray[0]}
+                to={theme.colors.gray[2]}
+            />
         </Container>
     );
 };

@@ -82,13 +82,13 @@ export default () => {
                         link="https://github.com/maxijonson"
                     />
                     <Social
-                        icon={AiOutlineTwitter}
-                        link="https://twitter.com/MaxiJonson"
-                    />
-                    <Social
                         icon={AiOutlineMail}
                         link="mailto:tristan.chin@chintristan.io"
                         noBlank
+                    />
+                    <Social
+                        icon={AiOutlineTwitter}
+                        link="https://twitter.com/MaxiJonson"
                     />
                 </Group>
             </Container>

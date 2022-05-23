@@ -14,6 +14,7 @@ import {
 } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import HomeTitle from "./HomeTitle";
+import Transitionner from "../../../components/Transitionner";
 
 import IconHTML from "../../../assets/images/skills/html.svg";
 import IconCSS from "../../../assets/images/skills/css.svg";
@@ -49,22 +50,6 @@ const useStyles = createStyles((theme) => ({
         overflowX: "hidden",
         minHeight: "100vh",
         background: theme.colors.gray[2],
-    },
-    transitionner: {
-        position: "absolute",
-        background: theme.colors.gray[0],
-        left: "50%",
-        transform: "translateX(-50%)",
-        borderRadius: "0 0 100% 100%",
-        top: "-150px",
-        width: "150vw",
-        height: "200px",
-
-        [`@media (min-width: ${theme.breakpoints.md}px)`]: {
-            top: "-436px",
-            width: "150vw",
-            height: "500px",
-        },
     },
     title: {
         marginTop: "100px",
@@ -148,8 +133,12 @@ export default () => {
     const { t } = useTranslation();
 
     return (
-        <Container className={classes.container} fluid>
-            <div className={classes.transitionner} />
+        <Container className={classes.container} fluid pb="xl">
+            <Transitionner
+                type="rounddown"
+                from={theme.colors.gray[0]}
+                to={theme.colors.gray[2]}
+            />
             <Container>
                 <HomeTitle
                     className={classes.title}

@@ -16,6 +16,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { DiNpm } from "react-icons/di";
 import { FaFaucet } from "react-icons/fa";
 import { Trans, useTranslation } from "react-i18next";
+import Transitionner from "../../../components/Transitionner";
 import HomeTitle from "./HomeTitle";
 
 import ImageNuclui from "../../../assets/images/projects/nuclui.png";
@@ -31,16 +32,8 @@ const useStyles = createStyles((theme) => ({
         minHeight: "100vh",
         background: theme.colors.gray[0],
     },
-    transitionner: {
-        position: "absolute",
-        background: `linear-gradient(to left bottom, ${theme.colors.gray[2]} 49%, ${theme.colors.gray[0]} 50%)`,
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100px",
-    },
     title: {
-        marginTop: "100px",
+        marginTop: "calc(5vh + 12px)",
     },
     text: {
         textAlign: "center",
@@ -200,8 +193,12 @@ export default () => {
     const { t } = useTranslation(["home"]);
 
     return (
-        <Container className={classes.container} fluid>
-            <div className={classes.transitionner} />
+        <Container className={classes.container} fluid pb="xl">
+            <Transitionner
+                type="slantdesc"
+                from={theme.colors.gray[2]}
+                to={theme.colors.gray[0]}
+            />
             <Container>
                 <HomeTitle
                     className={classes.title}
