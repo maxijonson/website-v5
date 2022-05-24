@@ -9,14 +9,63 @@ const PRESERVED_NAMES = [wc("Tristan.jpg")];
 const directives = {
     webp: new URLSearchParams({
         format: "webp",
-        quality: "80",
     }),
 };
 
 const fileDirectives: {
     isMatch: ReturnType<typeof wc>;
-    directive: URLSearchParams;
-}[] = [];
+    directive: URLSearchParams | ((url: URL) => URLSearchParams);
+}[] = [
+    {
+        isMatch: wc("**/src/assets/images/Tristan.jpg"),
+        directive: new URLSearchParams({
+            format: "webp",
+            width: "200",
+            height: "200",
+        }),
+    },
+    {
+        isMatch: wc("**/src/assets/images/skills/*"),
+        directive: new URLSearchParams({
+            format: "webp",
+            width: "16",
+            height: "16",
+            fit: "contain",
+            background: "transparent",
+        }),
+    },
+    {
+        isMatch: wc("**/src/assets/images/projects/*"),
+        directive: (url) => {
+            return new URLSearchParams({
+                format: "webp",
+                width: "300",
+                height: "160",
+                fit: url.pathname.endsWith("react.jpg") ? "cover" : "contain",
+                background: "transparent",
+            });
+        },
+    },
+    {
+        isMatch: wc("**/src/assets/images/experience/*"),
+        directive: new URLSearchParams({
+            format: "webp",
+            width: "25",
+            height: "25",
+            fit: "cover",
+        }),
+    },
+    {
+        isMatch: wc("**/src/assets/images/education/*"),
+        directive: new URLSearchParams({
+            format: "webp",
+            width: "128",
+            height: "64",
+            fit: "contain",
+            background: "transparent",
+        }),
+    },
+];
 
 export default defineConfig({
     plugins: [
@@ -29,6 +78,9 @@ export default defineConfig({
                 );
 
                 if (fileDirective) {
+                    if (typeof fileDirective.directive === "function") {
+                        return fileDirective.directive(url);
+                    }
                     return fileDirective.directive;
                 }
                 return directives.webp;
@@ -43,7 +95,6 @@ export default defineConfig({
             input: resolve(__dirname, "src/index.html"),
             output: {
                 assetFileNames: (chunkInfo) => {
-                    console.info("chunkInfo", chunkInfo.name);
                     if (
                         PRESERVED_NAMES.some((isMatch) =>
                             isMatch(chunkInfo.name ?? "")
