@@ -65,6 +65,12 @@ const fileDirectives: {
             background: "transparent",
         }),
     },
+    {
+        isMatch: wc("**/src/assets/images/favicon/*"),
+        directive: new URLSearchParams({
+            quality: "100",
+        }),
+    },
 ];
 
 export default defineConfig({
