@@ -5,16 +5,20 @@ import {
     ColorSchemeProvider,
     MantineProvider,
 } from "@mantine/core";
+import { useColorScheme } from "@mantine/hooks";
 import App from "./components/App";
 import DebugTools from "./components/DebugTools";
 import "./i18n";
 import Fonts from "./components/Fonts";
 import GlobalStyles from "./components/GlobalStyles";
+import Favicon from "./components/Favicon";
 
 const root = createRoot(document.getElementById("root")!);
 
 const Root = () => {
-    const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
+    const [colorScheme, setColorScheme] = useState<ColorScheme>(
+        useColorScheme()
+    );
     const toggleColorScheme = (value?: ColorScheme) =>
         setColorScheme(
             (current) => value || (current === "dark" ? "light" : "dark")
@@ -50,6 +54,7 @@ const Root = () => {
                     <Fonts />
                     <GlobalStyles />
                     <App />
+                    <Favicon />
                 </MantineProvider>
             </ColorSchemeProvider>
         </StrictMode>
