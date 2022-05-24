@@ -11,7 +11,7 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 
 export default () => {
-    const { t } = useTranslation(["home"]);
+    const { t, i18n } = useTranslation(["home"]);
 
     const bio = useScrollIntoView<HTMLDivElement>({ offset: 50 });
     const skills = useScrollIntoView<HTMLDivElement>();
@@ -28,6 +28,10 @@ export default () => {
         { name: t("home:education.title"), element: education },
         { name: t("home:contact.title"), element: contact },
     ];
+
+    React.useEffect(() => {
+        document.title = t("home:title");
+    }, [i18n.language]);
 
     return (
         <>
