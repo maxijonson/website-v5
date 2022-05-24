@@ -1,5 +1,6 @@
 import {
     ActionIcon,
+    Anchor,
     Card,
     Container,
     createStyles,
@@ -46,9 +47,6 @@ const useStyles = createStyles((theme) => ({
             theme.colors.gray[0],
             theme.colors.gray[1]
         ),
-    },
-    actionIcon: {
-        color: "unset !important",
     },
 }));
 
@@ -221,7 +219,9 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                         t={t}
                         values={{ github: "Github" }}
                         components={[
-                            <a href="https://github.com/maxijonson">Github</a>,
+                            <Anchor href="https://github.com/maxijonson">
+                                Github
+                            </Anchor>,
                         ]}
                     />
                 </Text>
@@ -261,9 +261,8 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                                         ({ icon: Icon, url, title }) => (
                                             <ActionIcon
                                                 key={url}
-                                                className={classes.actionIcon}
                                                 variant="hover"
-                                                color="blue"
+                                                color="dark"
                                                 component="a"
                                                 href={url}
                                                 target="_blank"

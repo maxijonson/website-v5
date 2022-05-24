@@ -112,7 +112,7 @@ const useStyles = createStyles(
 
 const useHeaderStyles = createStyles((theme) => ({
     header: {
-        color: `${theme.colors.dark[5]} !important`,
+        color: `${theme.colors.dark[5]}`,
         display: "block",
         position: "relative",
         overflow: "hidden",
@@ -131,7 +131,6 @@ const useHeaderStyles = createStyles((theme) => ({
         },
 
         "&:hover": {
-            textDecoration: "none !important",
             "&::after": {
                 transform: "translate3d(0, 0, 0)",
             },

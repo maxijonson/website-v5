@@ -47,9 +47,6 @@ const useStyles = createStyles((theme) => ({
     jobPosition: {
         fontStyle: "italic",
     },
-    jobPoints: {
-        paddingLeft: "0px !important",
-    },
 }));
 
 const useJobs = () => {
@@ -187,7 +184,8 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                                 )}
                                 {job.jobPoints && (
                                     <List
-                                        className={classes.jobPoints}
+                                        mt="md"
+                                        pl={0}
                                         icon={
                                             <ThemeIcon color="gray" radius="xl">
                                                 <BiTask />

@@ -4,7 +4,6 @@ import {
     ColorScheme,
     ColorSchemeProvider,
     MantineProvider,
-    TypographyStylesProvider,
 } from "@mantine/core";
 import App from "./components/App";
 import DebugTools from "./components/DebugTools";
@@ -23,25 +22,36 @@ const Root = () => {
 
     return (
         <StrictMode>
-            <TypographyStylesProvider>
-                <ColorSchemeProvider
-                    colorScheme={colorScheme}
-                    toggleColorScheme={toggleColorScheme}
+            <ColorSchemeProvider
+                colorScheme={colorScheme}
+                toggleColorScheme={toggleColorScheme}
+            >
+                <MantineProvider
+                    theme={{
+                        fontFamily: "Lato",
+                    }}
+                    defaultProps={{
+                        Anchor: {
+                            weight: "bold",
+                            underline: false,
+                        },
+                    }}
+                    styles={{
+                        Anchor: {
+                            root: {
+                                color: "#0048cf",
+                            },
+                        },
+                    }}
+                    withNormalizeCSS
+                    withGlobalStyles
                 >
-                    <MantineProvider
-                        theme={{
-                            fontFamily: "Lato",
-                        }}
-                        withNormalizeCSS
-                        withGlobalStyles
-                    >
-                        <DebugTools />
-                        <Fonts />
-                        <GlobalStyles />
-                        <App />
-                    </MantineProvider>
-                </ColorSchemeProvider>
-            </TypographyStylesProvider>
+                    <DebugTools />
+                    <Fonts />
+                    <GlobalStyles />
+                    <App />
+                </MantineProvider>
+            </ColorSchemeProvider>
         </StrictMode>
     );
 };

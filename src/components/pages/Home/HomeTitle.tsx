@@ -22,10 +22,15 @@ interface HomeTitleProps extends StyleProps {
 
 const useStyles = createStyles((theme, { color, align }: StyleProps) => ({
     title: {
-        fontFamily: "Staatliches",
+        fontFamily:
+            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'",
         color: color ?? theme.colors.dark[8],
         textTransform: "uppercase",
         textAlign: align ?? "center",
+        fontWeight: 700,
+        marginTop: "32px",
+        marginBottom: "12px",
+        lineHeight: 1.3,
     },
 }));
 

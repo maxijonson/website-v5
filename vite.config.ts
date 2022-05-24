@@ -13,15 +13,10 @@ const directives = {
     }),
 };
 
-const fileDirectives = [
-    {
-        isMatch: wc("**/src/assets/images/Tristan.jpg"),
-        directive: new URLSearchParams({
-            format: "webp;jpg",
-            quality: "80;100",
-        }),
-    },
-];
+const fileDirectives: {
+    isMatch: ReturnType<typeof wc>;
+    directive: URLSearchParams;
+}[] = [];
 
 export default defineConfig({
     plugins: [

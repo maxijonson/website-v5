@@ -4,6 +4,7 @@ import {
     createStyles,
     Text,
     ActionIcon,
+    Anchor,
 } from "@mantine/core";
 import { t } from "i18next";
 import { AiFillGithub, AiOutlineMail, AiOutlineTwitter } from "react-icons/ai";
@@ -24,9 +25,6 @@ const useStyles = createStyles((theme) => ({
         textAlign: "center",
         fontSize: theme.fontSizes.lg,
     },
-    actionIcon: {
-        color: `${theme.colors.dark[5]} !important`,
-    },
 }));
 
 const Social = ({
@@ -40,14 +38,11 @@ const Social = ({
     title: string;
     noBlank?: boolean;
 }) => {
-    const { classes } = useStyles();
-
     return (
         <ActionIcon
             component="a"
             href={link}
             target={noBlank ? "_self" : "_blank"}
-            className={classes.actionIcon}
             size="xl"
             p={5}
             title={title}
@@ -69,9 +64,9 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                         t={t}
                         values={{ email: "tristan.chin@chintristan.io" }}
                         components={[
-                            <a href="mailto:tristan.chin@chintristan.io">
+                            <Anchor href="mailto:tristan.chin@chintristan.io">
                                 tristan.chin@chintristan.io
-                            </a>,
+                            </Anchor>,
                         ]}
                     />
                 </Text>
