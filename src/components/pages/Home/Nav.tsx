@@ -31,6 +31,7 @@ interface NavProps {
         name: string;
         element: ReturnType<typeof useScrollIntoView>;
     }[];
+    forceVisible: boolean;
 }
 
 interface HeaderAnchorProps {
@@ -41,13 +42,16 @@ interface HeaderAnchorProps {
 
 interface UseStylesParams {
     showBackground: boolean;
+    visible: boolean;
 }
 
 const useStyles = createStyles(
-    (theme, { showBackground }: UseStylesParams) => ({
+    (theme, { showBackground, visible }: UseStylesParams) => ({
         root: {
             border: "none",
             background: "transparent",
+            transform: visible ? "translateY(0%)" : "translateY(-100%)",
+            transition: "transform 0.5s",
 
             "&::before": {
                 content: "''",
@@ -170,13 +174,29 @@ const HeaderAnchor = ({
     );
 };
 
-export default ({ headers }: NavProps) => {
+export default ({ headers, forceVisible }: NavProps) => {
     const theme = useMantineTheme();
     const { height, width } = useViewportSize();
     const [{ y }] = useWindowScroll();
     const [menuOpen, toggleMenu] = useBooleanToggle(false);
-    const { classes } = useStyles({ showBackground: y >= height - 60 });
+
+    const [lastY, setLastY] = React.useState(y);
+    const [visible, setVisible] = React.useState(true);
+
+    const { classes } = useStyles({
+        showBackground: y >= height - 60,
+        visible: forceVisible || menuOpen || visible,
+    });
+
     const { i18n } = useTranslation();
+
+    React.useEffect(() => {
+        const direction = y > lastY ? "down" : "up";
+        if (y !== lastY) {
+            setVisible(direction === "up");
+        }
+        setLastY(y);
+    });
 
     return (
         <Header className={classes.root} height={60} p={0} fixed>
@@ -187,6 +207,7 @@ export default ({ headers }: NavProps) => {
                             className={classes.logo}
                             src={Logo}
                             radius={0}
+                            alt="Tristan Chin Logo"
                         />
                     </Group>
                     <Group className={classes.navGroup}>

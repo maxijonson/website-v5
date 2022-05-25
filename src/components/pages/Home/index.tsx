@@ -1,4 +1,4 @@
-import { useScrollIntoView } from "@mantine/hooks";
+import { useIntersection, useScrollIntoView } from "@mantine/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Bio from "./Bio";
@@ -12,6 +12,10 @@ import Skills from "./Skills";
 
 export default () => {
     const { t, i18n } = useTranslation(["home"]);
+
+    const [landingRef, landing] = useIntersection<HTMLDivElement>({
+        threshold: 0.6,
+    });
 
     const bio = useScrollIntoView<HTMLDivElement>({ offset: 50 });
     const skills = useScrollIntoView<HTMLDivElement>();
@@ -35,8 +39,11 @@ export default () => {
 
     return (
         <>
-            <Nav headers={headers} />
-            <Landing />
+            <Nav
+                headers={headers}
+                forceVisible={landing?.isIntersecting ?? false}
+            />
+            <Landing ref={landingRef} />
             <Bio ref={bio.targetRef} />
             <Skills ref={skills.targetRef} />
             <Projects ref={projects.targetRef} />

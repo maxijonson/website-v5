@@ -104,11 +104,11 @@ export default defineConfig({
     build: {
         outDir: "../dist",
         emptyOutDir: true,
+        assetsInlineLimit: 0,
         rollupOptions: {
             input: resolve(__dirname, "src/index.html"),
             output: {
                 assetFileNames: (chunkInfo) => {
-                    console.info("chunkInfo", chunkInfo.name);
                     if (
                         PRESERVED_NAMES.some((isMatch) =>
                             isMatch(chunkInfo.name ?? "")

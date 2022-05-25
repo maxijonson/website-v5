@@ -74,7 +74,7 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export default () => {
+export default React.forwardRef<HTMLDivElement>((_props, ref) => {
     const os = useOs();
     const network = useNetwork();
     const { classes } = useStyles();
@@ -83,7 +83,7 @@ export default () => {
     const playVideo = os !== "ios" && os !== "android" && !network.saveData;
 
     return (
-        <Container className={classes.container} fluid px={0}>
+        <Container ref={ref} className={classes.container} fluid px={0}>
             <BackgroundImage
                 className={classes.backgroundImage}
                 src={StaticBackground}
@@ -115,4 +115,4 @@ export default () => {
             </BackgroundImage>
         </Container>
     );
-};
+});
