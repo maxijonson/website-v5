@@ -4,7 +4,7 @@ import { resolve } from "path";
 import react from "@vitejs/plugin-react";
 import wc from "wildcard-match";
 
-const PRESERVED_NAMES = [wc("Tristan.jpg")];
+const PRESERVED_NAMES: ReturnType<typeof wc>[] = [];
 
 const directives = {
     webp: new URLSearchParams({
@@ -17,7 +17,14 @@ const fileDirectives: {
     directive: URLSearchParams | ((url: URL) => URLSearchParams);
 }[] = [
     {
-        isMatch: wc("**/src/assets/images/Tristan.jpg"),
+        isMatch: wc("**/src/assets/images/landing/background.jpg"),
+        directive: new URLSearchParams({
+            format: "webp",
+            quality: "100",
+        }),
+    },
+    {
+        isMatch: wc("**/src/assets/images/tristan/mtl.jpg"),
         directive: new URLSearchParams({
             format: "webp",
             width: "200",
@@ -101,6 +108,7 @@ export default defineConfig({
             input: resolve(__dirname, "src/index.html"),
             output: {
                 assetFileNames: (chunkInfo) => {
+                    console.info("chunkInfo", chunkInfo.name);
                     if (
                         PRESERVED_NAMES.some((isMatch) =>
                             isMatch(chunkInfo.name ?? "")

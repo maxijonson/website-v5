@@ -1,5 +1,6 @@
 import {
     Anchor,
+    Avatar,
     Burger,
     Container,
     createStyles,
@@ -22,6 +23,8 @@ import {
 import _ from "lodash";
 import React from "react";
 import { useTranslation } from "react-i18next";
+
+import Logo from "../../../assets/images/logo/color-transparent.svg";
 
 interface NavProps {
     headers: {
@@ -70,8 +73,16 @@ const useStyles = createStyles(
         },
         containerGroup: {
             height: "100%",
+            justifyContent: "space-between",
         },
-
+        navGroup: {
+            zIndex: 210,
+        },
+        logo: {
+            "& img": {
+                objectFit: "contain",
+            },
+        },
         divider: {
             zIndex: 100,
             margin: "auto 0",
@@ -170,97 +181,118 @@ export default ({ headers }: NavProps) => {
     return (
         <Header className={classes.root} height={60} p={0} fixed>
             <Container className={classes.container}>
-                <Group className={classes.containerGroup} position="right">
-                    <Group hidden={width < theme.breakpoints.sm}>
-                        {_.map(headers, (header) => (
+                <Group className={classes.containerGroup}>
+                    <Group className={classes.navGroup}>
+                        <Avatar
+                            className={classes.logo}
+                            src={Logo}
+                            radius={0}
+                        />
+                    </Group>
+                    <Group className={classes.navGroup}>
+                        <Group hidden={width < theme.breakpoints.sm}>
+                            {_.map(headers, (header) => (
+                                <HeaderAnchor
+                                    key={header.name}
+                                    onClick={() =>
+                                        header.element.scrollIntoView()
+                                    }
+                                >
+                                    {header.name}
+                                </HeaderAnchor>
+                            ))}
+                            <Divider
+                                className={classes.divider}
+                                orientation="vertical"
+                                color="dark"
+                            />
+                        </Group>
+                        <Group>
                             <HeaderAnchor
-                                key={header.name}
-                                onClick={() => header.element.scrollIntoView()}
+                                onClick={() =>
+                                    i18n.changeLanguage(
+                                        i18n.language === "en" ? "fr" : "en"
+                                    )
+                                }
                             >
-                                {header.name}
+                                {i18n.language === "en" ? "FR" : "EN"}
                             </HeaderAnchor>
-                        ))}
-                        <Divider
-                            className={classes.divider}
-                            orientation="vertical"
-                            color="dark"
-                        />
-                    </Group>
-                    <Group>
-                        <HeaderAnchor
-                            onClick={() =>
-                                i18n.changeLanguage(
-                                    i18n.language === "en" ? "fr" : "en"
-                                )
-                            }
-                        >
-                            {i18n.language === "en" ? "FR" : "EN"}
-                        </HeaderAnchor>
-                    </Group>
-                    <Group hidden={width >= theme.breakpoints.sm}>
-                        <Divider
-                            className={classes.divider}
-                            orientation="vertical"
-                            color="dark"
-                        />
-                        <Burger
-                            className={classes.burger}
-                            opened={menuOpen}
-                            onClick={() => toggleMenu()}
-                            title="Menu"
-                            name="menu"
-                        />
+                        </Group>
+                        <Group hidden={width >= theme.breakpoints.sm}>
+                            <Divider
+                                className={classes.divider}
+                                orientation="vertical"
+                                color="dark"
+                            />
+                            <Burger
+                                className={classes.burger}
+                                opened={menuOpen}
+                                onClick={() => toggleMenu()}
+                                title="Menu"
+                                name="menu"
+                            />
 
-                        <GroupedTransition
-                            mounted={menuOpen}
-                            transitions={{
-                                overlay: { duration: 250, transition: "fade" },
-                                navbar: {
-                                    duration: 250,
-                                    transition: "slide-right",
-                                },
-                            }}
-                        >
-                            {(styles) => (
-                                <>
-                                    <Overlay
-                                        className={classes.overlay}
-                                        style={styles.overlay}
-                                        color="gray"
-                                        blur={2}
-                                        onClick={() => toggleMenu()}
-                                    />
-                                    <Navbar
-                                        style={styles.navbar}
-                                        className={classes.navbar}
-                                    >
-                                        <Container
-                                            className={classes.navbarContainer}
-                                            fluid
-                                            p="xs"
+                            <GroupedTransition
+                                mounted={menuOpen}
+                                transitions={{
+                                    overlay: {
+                                        duration: 250,
+                                        transition: "fade",
+                                    },
+                                    navbar: {
+                                        duration: 250,
+                                        transition: "slide-right",
+                                    },
+                                }}
+                            >
+                                {(styles) => (
+                                    <>
+                                        <Overlay
+                                            className={classes.overlay}
+                                            style={styles.overlay}
+                                            color="gray"
+                                            blur={2}
+                                            onClick={() => toggleMenu()}
+                                        />
+                                        <Navbar
+                                            style={styles.navbar}
+                                            className={classes.navbar}
                                         >
-                                            <Stack
-                                                align="center"
-                                                justify="center"
+                                            <Container
+                                                className={
+                                                    classes.navbarContainer
+                                                }
+                                                fluid
+                                                p="xs"
                                             >
-                                                {_.map(headers, (header) => (
-                                                    <HeaderAnchor
-                                                        key={header.name}
-                                                        size="xl"
-                                                        onClick={() => {
-                                                            header.element.scrollIntoView();
-                                                            toggleMenu();
-                                                        }}
-                                                    >
-                                                        {header.name}
-                                                    </HeaderAnchor>
-                                                ))}
-                                            </Stack>
-                                        </Container>
-                                    </Navbar>
-                                </>
-                            )}
-                        </GroupedTransition>
+                                                <Stack
+                                                    align="center"
+                                                    justify="center"
+                                                >
+                                                    {_.map(
+                                                        headers,
+                                                        (header) => (
+                                                            <HeaderAnchor
+                                                                key={
+                                                                    header.name
+                                                                }
+                                                                size="xl"
+                                                                onClick={() => {
+                                                                    header.element.scrollIntoView();
+                                                                    toggleMenu();
+                                                                }}
+                                                            >
+                                                                {header.name}
+                                                            </HeaderAnchor>
+                                                        )
+                                                    )}
+                                                </Stack>
+                                            </Container>
+                                        </Navbar>
+                                    </>
+                                )}
+                            </GroupedTransition>
+                        </Group>
                     </Group>
                 </Group>
             </Container>

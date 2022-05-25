@@ -11,8 +11,8 @@ import {
 import { useOs, useNetwork } from "@mantine/hooks";
 import { useTranslation } from "react-i18next";
 
-import StaticBackground from "../../../assets/images/Home_Landing_Background.jpg";
-import VideoBackground from "../../../assets/videos/Home_Landing_Video.mp4";
+import StaticBackground from "../../../assets/images/landing/background.jpg";
+import VideoBackground from "../../../assets/videos/landing/background.mp4";
 
 const useStyles = createStyles((theme) => ({
     container: {
