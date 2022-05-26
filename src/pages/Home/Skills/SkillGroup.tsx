@@ -30,7 +30,7 @@ export default ({ skillGroup }: SkillGroupProps) => {
                     align="left"
                 />
                 {_.map(skillGroup.skills, (skill) => (
-                    <Skill skill={skill} />
+                    <Skill key={skill.name} skill={skill} />
                 ))}
             </Stack>
         </Card>

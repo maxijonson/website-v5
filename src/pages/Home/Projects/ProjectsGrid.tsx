@@ -1,12 +1,15 @@
 import { SimpleGrid, useMantineTheme } from "@mantine/core";
 import _ from "lodash";
 import React from "react";
-import SkillGroup from "./SkillGroup";
-import useSkills from "./useSkills";
+import ProjectCard from "./Project";
+import { Project } from "./types";
 
-export default () => {
+interface ProjectsGridProps {
+    projects: Project[];
+}
+
+export default ({ projects }: ProjectsGridProps) => {
     const theme = useMantineTheme();
-    const skills = useSkills();
 
     return (
         <SimpleGrid
@@ -17,8 +20,8 @@ export default () => {
                 { maxWidth: theme.breakpoints.sm, cols: 1 },
             ]}
         >
-            {_.map(skills, (skillGroup) => (
-                <SkillGroup key={skillGroup.name} skillGroup={skillGroup} />
+            {_.map(projects, (project) => (
+                <ProjectCard key={project.name} project={project} />
             ))}
         </SimpleGrid>
     );
