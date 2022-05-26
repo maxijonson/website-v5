@@ -16,7 +16,6 @@ const useStyles = createStyles(() => ({
         position: "relative",
         overflow: "hidden",
     },
-
     backgroundImage: {
         height: "100%",
         width: "100%",
