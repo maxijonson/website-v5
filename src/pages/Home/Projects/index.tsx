@@ -17,14 +17,14 @@ import { AiFillGithub } from "react-icons/ai";
 import { DiNpm } from "react-icons/di";
 import { FaFaucet } from "react-icons/fa";
 import { Trans, useTranslation } from "react-i18next";
-import Transitionner from "../../components/Transitionner";
-import HomeTitle from "./HomeTitle";
+import Transitionner from "../../../components/Transitionner";
+import HomeTitle from "../HomeTitle";
 
-import ImageNuclui from "../../assets/images/projects/nuclui.png";
-import ImageIntellibot from "../../assets/images/projects/intellibot.png";
-import ImagePunchBot from "../../assets/images/projects/punchbot.png";
-import ImageCuisto from "../../assets/images/projects/cuisto.png";
-import ImageReact from "../../assets/images/projects/react.jpg";
+import ImageNuclui from "../../../assets/images/projects/nuclui.png";
+import ImageIntellibot from "../../../assets/images/projects/intellibot.png";
+import ImagePunchBot from "../../../assets/images/projects/punchbot.png";
+import ImageCuisto from "../../../assets/images/projects/cuisto.png";
+import ImageReact from "../../../assets/images/projects/react.jpg";
 
 const useStyles = createStyles((theme) => ({
     container: {

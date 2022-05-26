@@ -12,7 +12,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import React from "react";
 import { Trans } from "react-i18next";
 import { IconType } from "react-icons";
-import HomeTitle from "./HomeTitle";
+import HomeTitle from "../HomeTitle";
 
 const useStyles = createStyles((theme) => ({
     container: {
