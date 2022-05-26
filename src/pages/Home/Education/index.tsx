@@ -12,6 +12,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import HomeTitle from "../HomeTitle";
 import Transitionner from "../../../components/Transitionner";
+import DateRange from "../../../components/DateRange";
 
 import ImageETS from "../../../assets/images/education/ets.png";
 import ImageCLG from "../../../assets/images/education/clg.png";
@@ -108,42 +109,11 @@ const useEducation = () => {
     ];
 };
 
-const useGetDateRange = () => {
-    const { t } = useTranslation();
-
-    return ({ from, to, ongoing }: ReturnType<typeof useEducation>[0]) => {
-        if (!from && !to) return "";
-        const fromStr = from
-            ? `${t(`months.${from.getMonth()}`)} ${from.getFullYear()}`
-            : "";
-        const toStr = to
-            ? `${t(`months.${to.getMonth()}`)} ${to.getFullYear()}`
-            : "";
-        const ongoingStr = (() => {
-            if (!ongoing) return "";
-            if (toStr) return ` (${t("time.expected")})`;
-            return ` - ${t("time.present")}`;
-        })();
-
-        if (from && to) {
-            return `${fromStr} - ${toStr}${ongoingStr}`;
-        }
-        if (from) {
-            return `${fromStr}${ongoingStr}`;
-        }
-        if (to) {
-            return `${toStr}${ongoingStr}`;
-        }
-        return "";
-    };
-};
-
 export default React.forwardRef<HTMLDivElement>((_props, ref) => {
-    const { t } = useTranslation(["home"]);
+    const { t } = useTranslation(["translation", "home"]);
     const theme = useMantineTheme();
     const { classes } = useStyles();
     const education = useEducation();
-    const getDateRange = useGetDateRange();
 
     return (
         <Container ref={ref} className={classes.container} fluid pb="xl">
@@ -174,9 +144,18 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                                         <Text size="lg" weight="bold">
                                             {item.name}
                                         </Text>
-                                        <Text size="sm">
-                                            {getDateRange(item)}
-                                        </Text>
+                                        <Group spacing={2}>
+                                            <DateRange
+                                                from={item.from}
+                                                to={item.to}
+                                                options={{ day: false }}
+                                            />
+                                            {item.ongoing && (
+                                                <Text size="sm">
+                                                    {`(${t("time.expected")})`}
+                                                </Text>
+                                            )}
+                                        </Group>
                                         <Text
                                             className={classes.location}
                                             size="sm"
