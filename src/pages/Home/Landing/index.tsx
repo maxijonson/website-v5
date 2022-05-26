@@ -7,7 +7,7 @@ import {
 } from "@mantine/core";
 import LandingVideo from "./LandingVideo";
 
-import StaticBackground from "../../../../assets/images/landing/background.jpg";
+import StaticBackground from "../../../assets/images/landing/background.jpg";
 import LandingText from "./LandingText";
 
 const useStyles = createStyles(() => ({

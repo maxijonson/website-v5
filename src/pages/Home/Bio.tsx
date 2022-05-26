@@ -10,7 +10,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import HomeTitle from "./HomeTitle";
 
-import ProfilePicture from "../../../assets/images/tristan/mtl.jpg";
+import ProfilePicture from "../../assets/images/tristan/mtl.jpg";
 
 const useStyles = createStyles((theme) => ({
     container: {

@@ -14,7 +14,7 @@
         "build:esm": "tsc -p tsconfig.prod.json && cp .build/package.esm.json dist/esm/package.json",
         "build:types": "tsc -p tsconfig.prod.json --declaration --declarationMap --emitDeclarationOnly --declarationDir dist/@types",
         "reinstall": "npm run clean && rm -rf node_modules package-lock.json && npm install",
-        "preview": "vite preview"
+        "preview": "npm run build && vite preview"
     },
     "exports": {
         ".": {

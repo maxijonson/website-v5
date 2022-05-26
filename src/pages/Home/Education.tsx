@@ -11,14 +11,14 @@ import {
 import React from "react";
 import { useTranslation } from "react-i18next";
 import HomeTitle from "./HomeTitle";
-import Transitionner from "../../../components/Transitionner";
+import Transitionner from "../../components/Transitionner";
 
-import ImageETS from "../../../assets/images/education/ets.png";
-import ImageCLG from "../../../assets/images/education/clg.png";
-import ImageAngular from "../../../assets/images/education/angular.jpg";
-import ImagePython from "../../../assets/images/education/python.jpg";
-import ImageReact from "../../../assets/images/education/react.jpg";
-import ImageNode from "../../../assets/images/education/node.jpg";
+import ImageETS from "../../assets/images/education/ets.png";
+import ImageCLG from "../../assets/images/education/clg.png";
+import ImageAngular from "../../assets/images/education/angular.jpg";
+import ImagePython from "../../assets/images/education/python.jpg";
+import ImageReact from "../../assets/images/education/react.jpg";
+import ImageNode from "../../assets/images/education/node.jpg";
 
 const useStyles = createStyles((theme) => ({
     container: {

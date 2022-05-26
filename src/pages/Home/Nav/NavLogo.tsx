@@ -1,7 +1,7 @@
 import { Avatar, createStyles } from "@mantine/core";
 import React from "react";
 
-import Logo from "../../../../assets/images/logo/color-transparent.svg";
+import Logo from "../../../assets/images/logo/color-transparent.svg";
 
 const useStyles = createStyles(() => ({
     logo: {

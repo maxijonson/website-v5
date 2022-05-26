@@ -2,7 +2,7 @@ import { createStyles } from "@mantine/core";
 import { useOs, useNetwork } from "@mantine/hooks";
 import React from "react";
 
-import VideoBackground from "../../../../assets/videos/landing/background.mp4";
+import VideoBackground from "../../../assets/videos/landing/background.mp4";
 
 const useStyles = createStyles(() => ({
     video: {
