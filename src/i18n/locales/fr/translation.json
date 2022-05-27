@@ -18,6 +18,13 @@
         "expected": "Prévu"
     },
     "copyright": {
-        "rights": "Tous droits réservés"
+        "rights": "Tous droits réservés",
+        "disclaimer": "Excepté pour les <0>{{attribution}}</0> suivantes.",
+        "attributions": "attributions",
+        "attribution": {
+            "name": "Nom",
+            "author": "Auteur",
+            "link": "Lien"
+        }
     }
 }
