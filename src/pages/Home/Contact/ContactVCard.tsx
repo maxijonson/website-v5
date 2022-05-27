@@ -5,25 +5,28 @@ import { useOs } from "@mantine/hooks";
 import QRCode from "react-qr-code";
 import { FaQrcode } from "react-icons/fa";
 
-// @ts-ignore
-import VCardUrl from "../../../assets/vcard.vcf?url";
-// @ts-ignore
-import VCardRaw from "../../../assets/vcard.vcf?raw";
+import VCardUrlEn from "../../../assets/vcard-en.vcf?url";
+import VCardUrlFr from "../../../assets/vcard-fr.vcf?url";
+import VCardRawEn from "../../../assets/vcard-en.vcf?raw";
+import VCardRawFr from "../../../assets/vcard-fr.vcf?raw";
 
 const FILENAME = "tristanchin.vcf";
 
 export default () => {
-    const { t } = useTranslation(["home"]);
+    const { t, i18n } = useTranslation(["home"]);
     const os = useOs();
     const [showQR, setShowQR] = React.useState(false);
 
+    const vcardUrl = i18n.language === "fr" ? VCardUrlFr : VCardUrlEn;
+    const vcardRaw = i18n.language === "fr" ? VCardRawFr : VCardRawEn;
+
     const handleClick = React.useCallback(() => {
         if (os === "ios" || os === "android") {
-            window.location.href = VCardUrl;
+            window.location.href = vcardUrl;
             return;
         }
 
-        const blob = new Blob([VCardRaw]);
+        const blob = new Blob([vcardRaw]);
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.href = url;
@@ -33,7 +36,7 @@ export default () => {
         link.click();
         URL.revokeObjectURL(url);
         document.body.removeChild(link);
-    }, []);
+    }, [vcardUrl, vcardRaw, os]);
 
     return (
         <>
@@ -68,7 +71,7 @@ export default () => {
                 <Center>
                     <QRCode
                         data-autofocus
-                        value={`${window.location.origin}/${VCardUrl}`}
+                        value={`${window.location.origin}/${vcardUrl}`}
                         size={256}
                     />
                 </Center>
