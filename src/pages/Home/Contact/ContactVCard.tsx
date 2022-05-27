@@ -53,7 +53,7 @@ export default () => {
                         variant="outline"
                         color="dark"
                         size="lg"
-                        p={4}
+                        p={6}
                         onClick={() => setShowQR(true)}
                         title="QR Code"
                     >
@@ -61,6 +61,7 @@ export default () => {
                     </ActionIcon>
                 </Group>
             </Center>
+
             <Modal
                 opened={showQR}
                 centered

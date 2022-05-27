@@ -9,6 +9,7 @@ import Bio from "./Bio";
 import Contact from "./Contact";
 import Education from "./Education";
 import Experience from "./Experience";
+import Footer from "./Footer";
 import Landing from "./Landing";
 import Nav from "./Nav";
 import Projects from "./Projects";
@@ -65,6 +66,7 @@ export default () => {
             <Experience ref={experience.targetRef} />
             <Education ref={education.targetRef} />
             <Contact ref={mergedContactRef} />
+            <Footer />
         </>
     );
 };

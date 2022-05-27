@@ -16,5 +16,8 @@
     "time": {
         "present": "Present",
         "expected": "Expected"
+    },
+    "copyright": {
+        "rights": "All rights reserved"
     }
 }
