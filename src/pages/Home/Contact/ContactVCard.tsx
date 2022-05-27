@@ -63,6 +63,7 @@ export default () => {
                 centered
                 title={<Text weight="bold">{t("home:contact.qr")}</Text>}
                 onClose={() => setShowQR(false)}
+                size="xs"
             >
                 <Center>
                     <QRCode
