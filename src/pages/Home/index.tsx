@@ -1,4 +1,8 @@
-import { useIntersection, useScrollIntoView } from "@mantine/hooks";
+import {
+    useIntersection,
+    useMergedRef,
+    useScrollIntoView,
+} from "@mantine/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Bio from "./Bio";
@@ -13,9 +17,14 @@ import Skills from "./Skills";
 export default () => {
     const { t, i18n } = useTranslation(["home"]);
 
-    const [landingRef, landing] = useIntersection<HTMLDivElement>({
-        threshold: 0.6,
-    });
+    const [landingIntersectionRef, landingObserver] =
+        useIntersection<HTMLDivElement>({
+            threshold: 0.6,
+        });
+    const [contactIntersectionRef, contactObserver] =
+        useIntersection<HTMLDivElement>({
+            threshold: 0.5,
+        });
 
     const bio = useScrollIntoView<HTMLDivElement>({ offset: 50 });
     const skills = useScrollIntoView<HTMLDivElement>();
@@ -23,6 +32,11 @@ export default () => {
     const experience = useScrollIntoView<HTMLDivElement>();
     const education = useScrollIntoView<HTMLDivElement>();
     const contact = useScrollIntoView<HTMLDivElement>();
+
+    const mergedContactRef = useMergedRef(
+        contact.targetRef,
+        contactIntersectionRef
+    );
 
     const headers = [
         { name: t("home:bio.title"), element: bio },
@@ -33,23 +47,24 @@ export default () => {
         { name: t("home:contact.title"), element: contact },
     ];
 
+    const forceNavVisible =
+        (landingObserver?.isIntersecting || contactObserver?.isIntersecting) ??
+        false;
+
     React.useEffect(() => {
         document.title = t("home:title");
     }, [i18n.language]);
 
     return (
         <>
-            <Nav
-                headers={headers}
-                forceVisible={landing?.isIntersecting ?? false}
-            />
-            <Landing ref={landingRef} />
+            <Nav headers={headers} forceVisible={forceNavVisible} />
+            <Landing ref={landingIntersectionRef} />
             <Bio ref={bio.targetRef} />
             <Skills ref={skills.targetRef} />
             <Projects ref={projects.targetRef} />
             <Experience ref={experience.targetRef} />
             <Education ref={education.targetRef} />
-            <Contact ref={contact.targetRef} />
+            <Contact ref={mergedContactRef} />
         </>
     );
 };
