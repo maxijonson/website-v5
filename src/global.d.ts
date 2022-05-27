@@ -32,3 +32,8 @@ declare module "*.ttf" {
     const value: any;
     export = value;
 }
+
+declare module "*.vcf" {
+    const value: any;
+    export = value;
+}

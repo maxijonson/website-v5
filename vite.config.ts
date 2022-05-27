@@ -101,6 +101,7 @@ export default defineConfig({
         }),
     ],
     root: "src",
+    assetsInclude: ["**/*.vcf"],
     build: {
         outDir: "../dist",
         emptyOutDir: true,

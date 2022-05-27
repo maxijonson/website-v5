@@ -101,6 +101,8 @@
     },
     "contact": {
         "title": "Contact",
-        "text": "I'm not currently looking for new opportunities, but if you want to get in touch, feel free to reach out to me at <0>{{email}}</0> or find me on my different socials!"
+        "text": "I'm not currently looking for new opportunities, but if you want to get in touch, feel free to reach out to me at <0>{{email}}</0> or find me on my different socials!",
+        "vcard": "Download Contact Card",
+        "qr": "Scan to download contact card"
     }
 }

@@ -4,6 +4,7 @@ import React from "react";
 import { Trans } from "react-i18next";
 import HomeTitle from "../HomeTitle";
 import ContactSocials from "./ContactSocials";
+import ContactVCard from "./ContactVCard";
 
 const useStyles = createStyles((theme) => ({
     container: {
@@ -37,6 +38,7 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                     />
                 </Text>
                 <ContactSocials />
+                <ContactVCard />
             </Container>
         </Container>
     );
