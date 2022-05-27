@@ -1,4 +1,4 @@
-import { ActionIcon, createStyles, Table, Text } from "@mantine/core";
+import { ActionIcon, createStyles, Table, Text, Tooltip } from "@mantine/core";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { FaLink } from "react-icons/fa";
@@ -42,14 +42,20 @@ export default () => {
                             </Text>
                         </td>
                         <td>
-                            <ActionIcon
-                                component="a"
-                                href={attribution.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <Tooltip
+                                label={attribution.linkName}
+                                withArrow
+                                disabled={!attribution.linkName}
                             >
-                                <FaLink />
-                            </ActionIcon>
+                                <ActionIcon
+                                    component="a"
+                                    href={attribution.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <FaLink />
+                                </ActionIcon>
+                            </Tooltip>
                         </td>
                     </tr>
                 ))}
