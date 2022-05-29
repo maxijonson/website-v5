@@ -37,12 +37,12 @@ declare module "*.vcf" {
     const value: any;
     export = value;
 }
-declare module "*.vcf?url" {
+declare module "*?url" {
     const value: any;
     export = value;
 }
 
-declare module "*.vcf?raw" {
+declare module "*?raw" {
     const value: any;
     export = value;
 }
