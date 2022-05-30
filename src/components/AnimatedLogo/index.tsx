@@ -2,8 +2,10 @@ import { createStyles } from "@mantine/core";
 import React from "react";
 import LogoInOut from "./LogoInOut";
 
-interface AnimatedLogoProps {
+export interface AnimatedLogoProps {
     size?: "xs" | "sm" | "md" | "lg" | "xl" | number;
+    count?: "infinite" | number;
+    animationDuration?: number;
 }
 
 interface UseStylesParams {
@@ -30,14 +32,38 @@ const useStyles = createStyles((_theme, { size }: UseStylesParams) => ({
     },
 }));
 
-export default ({ size = "sm" }: AnimatedLogoProps) => {
+const Copy = () => <LogoInOut />;
+
+export default ({
+    size = "sm",
+    count = "infinite",
+    animationDuration = 2500,
+}: AnimatedLogoProps) => {
+    const [iteration, setIteration] = React.useState(0);
+
     const { classes } = useStyles({
         size: typeof size === "string" ? SIZES[size] : size,
     });
 
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setIteration((current) => {
+                if (count !== "infinite" && current >= count) {
+                    return current;
+                }
+                return current + 1;
+            });
+        }, animationDuration);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [count, animationDuration]);
+
     return (
         <div className={classes.logo}>
-            <LogoInOut />
+            {/* HACK: "animate" does not re-animate on call, so instead unmount and re-mount */}
+            {iteration % 2 === 0 ? <LogoInOut /> : <Copy />}
         </div>
     );
 };
