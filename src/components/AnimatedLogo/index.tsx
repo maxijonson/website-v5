@@ -48,10 +48,11 @@ export default ({
     React.useEffect(() => {
         const interval = setInterval(() => {
             setIteration((current) => {
-                if (count !== "infinite" && current >= count) {
+                const next = current + 1;
+                if (count !== "infinite" && next >= count) {
                     return current;
                 }
-                return current + 1;
+                return next;
             });
         }, animationDuration);
 

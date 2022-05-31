@@ -7,8 +7,7 @@ import { useScrollLock } from "@mantine/hooks";
 import React from "react";
 import AnimatedLogo, { AnimatedLogoProps } from "../AnimatedLogo";
 
-interface LoadingProps extends LoadingOverlayProps {
-    size?: AnimatedLogoProps["size"];
+interface LoadingProps extends AnimatedLogoProps, LoadingOverlayProps {
     fixed?: boolean;
     /** Locks scrolling while the loader is visible */
     locked?: boolean;
@@ -26,6 +25,8 @@ const useStyles = createStyles((_theme, { fixed }: UseStylesParams) => ({
 
 export default ({
     size,
+    count,
+    animationDuration,
     fixed = false,
     locked = false,
     ...loadingOverlayProps
@@ -44,7 +45,13 @@ export default ({
             {...loadingOverlayProps}
             visible={visible}
             className={classes.loadingOverlay}
-            loader={<AnimatedLogo size={size} />}
+            loader={
+                <AnimatedLogo
+                    size={size}
+                    count={count}
+                    animationDuration={animationDuration}
+                />
+            }
         />
     );
 };

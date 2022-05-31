@@ -74,6 +74,7 @@
             }
         ],
         "no-restricted-exports": "off",
+        "no-promise-executor-return": "off",
         "spaced-comment": [
             "warn",
             "always",
