@@ -25,40 +25,42 @@ const Root = () => {
         );
 
     return (
-        <StrictMode>
-            <ColorSchemeProvider
-                colorScheme={colorScheme}
-                toggleColorScheme={toggleColorScheme}
+        <ColorSchemeProvider
+            colorScheme={colorScheme}
+            toggleColorScheme={toggleColorScheme}
+        >
+            <MantineProvider
+                theme={{
+                    fontFamily: "Lato",
+                }}
+                defaultProps={{
+                    Anchor: {
+                        weight: "bold",
+                        underline: false,
+                    },
+                }}
+                styles={{
+                    Anchor: {
+                        root: {
+                            color: "#0048cf",
+                        },
+                    },
+                }}
+                withNormalizeCSS
+                withGlobalStyles
             >
-                <MantineProvider
-                    theme={{
-                        fontFamily: "Lato",
-                    }}
-                    defaultProps={{
-                        Anchor: {
-                            weight: "bold",
-                            underline: false,
-                        },
-                    }}
-                    styles={{
-                        Anchor: {
-                            root: {
-                                color: "#0048cf",
-                            },
-                        },
-                    }}
-                    withNormalizeCSS
-                    withGlobalStyles
-                >
-                    <DebugTools />
-                    <Fonts />
-                    <GlobalStyles />
-                    <App />
-                    <Favicon />
-                </MantineProvider>
-            </ColorSchemeProvider>
-        </StrictMode>
+                <DebugTools />
+                <Fonts />
+                <GlobalStyles />
+                <App />
+                <Favicon />
+            </MantineProvider>
+        </ColorSchemeProvider>
     );
 };
 
-root.render(<Root />);
+root.render(
+    <StrictMode>
+        <Root />
+    </StrictMode>
+);
