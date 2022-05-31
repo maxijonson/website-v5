@@ -2,6 +2,8 @@ import {
     createStyles,
     LoadingOverlay,
     LoadingOverlayProps,
+    Stack,
+    Text,
 } from "@mantine/core";
 import { useScrollLock } from "@mantine/hooks";
 import React from "react";
@@ -11,6 +13,7 @@ interface LoadingProps extends AnimatedLogoProps, LoadingOverlayProps {
     fixed?: boolean;
     /** Locks scrolling while the loader is visible */
     locked?: boolean;
+    message?: string;
 }
 
 interface UseStylesParams {
@@ -27,6 +30,7 @@ export default ({
     size,
     count,
     animationDuration,
+    message,
     fixed = false,
     locked = false,
     ...loadingOverlayProps
@@ -46,11 +50,14 @@ export default ({
             visible={visible}
             className={classes.loadingOverlay}
             loader={
-                <AnimatedLogo
-                    size={size}
-                    count={count}
-                    animationDuration={animationDuration}
-                />
+                <Stack align="center">
+                    <AnimatedLogo
+                        size={size}
+                        count={count}
+                        animationDuration={animationDuration}
+                    />
+                    {message && <Text weight="bold">{message}</Text>}
+                </Stack>
             }
         />
     );

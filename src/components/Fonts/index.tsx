@@ -39,6 +39,33 @@ export default () => {
         return [[StaatlichesRegular, "normal", "normal"]];
     }, []);
 
+    React.useEffect(() => {
+        if (document && document.fonts) {
+            setTimeout(() => {
+                _.map(lato, ([font, weight, style]) => {
+                    document.fonts.add(
+                        new FontFace("Lato", `url(${font})`, {
+                            style,
+                            weight: `${weight}`,
+                        })
+                    );
+                    document.fonts.load(`${style} ${weight} 12px 'Lato'`);
+                });
+                _.map(staatliches, ([font, weight, style]) => {
+                    document.fonts.add(
+                        new FontFace("Staatliches", `url(${font})`, {
+                            style,
+                            weight: `${weight}`,
+                        })
+                    );
+                    document.fonts.load(
+                        `${style} ${weight} 12px 'Staatliches'`
+                    );
+                });
+            }, 0);
+        }
+    }, []);
+
     return (
         <Global
             styles={[
