@@ -4,7 +4,10 @@ import { Container, createStyles, Text, useMantineTheme } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import HomeTitle from "../HomeTitle";
 import Transitionner from "../../../components/Transitionner";
-import SkillsGrid from "./SkillsGrid";
+import LazyLoad from "../../../components/LazyLoad";
+import SkillsGridSkeleton from "./SkillsGridSkeleton";
+
+const SkillsGrid = React.lazy(() => import("./SkillsGrid"));
 
 const useStyles = createStyles((theme) => ({
     container: {
@@ -41,7 +44,9 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                     title={t("home:skills.title")}
                 />
                 <Text className={classes.text}>{t("home:skills.text")}</Text>
-                <SkillsGrid />
+                <LazyLoad fallback={<SkillsGridSkeleton />} margin={250}>
+                    <SkillsGrid />
+                </LazyLoad>
             </Container>
         </Container>
     );

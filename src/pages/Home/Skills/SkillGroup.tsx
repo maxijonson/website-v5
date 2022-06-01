@@ -21,7 +21,7 @@ export default ({ skillGroup }: SkillGroupProps) => {
     const { classes } = useStyles();
 
     return (
-        <Card key={skillGroup.name} shadow="sm" withBorder>
+        <Card shadow="sm" withBorder>
             <Stack>
                 <HomeTitle
                     className={classes.groupTitle}
