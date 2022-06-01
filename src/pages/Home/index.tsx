@@ -5,15 +5,16 @@ import {
 } from "@mantine/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import Bio from "./Bio";
-import Contact from "./Contact";
-import Education from "./Education";
-import Experience from "./Experience";
-import Footer from "./Footer";
-import Landing from "./Landing";
-import Nav from "./Nav";
-import Projects from "./Projects";
-import Skills from "./Skills";
+
+const Bio = React.lazy(() => import("./Bio"));
+const Contact = React.lazy(() => import("./Contact"));
+const Education = React.lazy(() => import("./Education"));
+const Experience = React.lazy(() => import("./Experience"));
+const Footer = React.lazy(() => import("./Footer"));
+const Landing = React.lazy(() => import("./Landing"));
+const Nav = React.lazy(() => import("./Nav"));
+const Projects = React.lazy(() => import("./Projects"));
+const Skills = React.lazy(() => import("./Skills"));
 
 export default () => {
     const { t, i18n } = useTranslation(["home"]);
