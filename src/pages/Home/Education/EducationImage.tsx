@@ -23,6 +23,9 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
+const W = 128;
+const H = W / 2;
+
 export default ({ image, name }: EducationImageProps) => {
     const { classes } = useStyles();
 
@@ -30,10 +33,11 @@ export default ({ image, name }: EducationImageProps) => {
         <Image
             className={classes.image}
             radius={0}
-            width="128px"
+            width={W}
+            height={H}
             src={image}
             alt={name}
-            imageProps={{ loading: "lazy" }}
+            imageProps={{ loading: "lazy", width: `${W}px`, height: `${H}px` }}
         />
     );
 };

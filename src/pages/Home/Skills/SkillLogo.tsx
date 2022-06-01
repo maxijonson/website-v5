@@ -14,16 +14,21 @@ const useStyles = createStyles(() => ({
     },
 }));
 
+const W = 16;
+const H = W;
+
 export default ({ name, logo, disabled = false }: SkillLogoProps) => {
     const { classes } = useStyles();
     return (
         <Image
             className={disabled ? classes.disabled : undefined}
             radius={0}
-            width="16px"
+            width={W}
+            height={H}
+            fit="contain"
             src={logo}
             alt={name}
-            imageProps={{ loading: "lazy" }}
+            imageProps={{ loading: "lazy", width: `${W}px`, height: `${H}px` }}
         />
     );
 };

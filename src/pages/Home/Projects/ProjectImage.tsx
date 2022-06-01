@@ -19,6 +19,9 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
+const W = 300;
+const H = 160;
+
 export default ({ name, image, cover = false }: ProjectImageProps) => {
     const { classes } = useStyles();
 
@@ -30,11 +33,16 @@ export default ({ name, image, cover = false }: ProjectImageProps) => {
         >
             {image ? (
                 <Image
-                    height={160}
+                    width={W}
+                    height={H}
                     fit={cover ? "cover" : "contain"}
                     src={image}
                     alt={name}
-                    imageProps={{ loading: "lazy" }}
+                    imageProps={{
+                        loading: "lazy",
+                        width: `${W}px`,
+                        height: `${H}px`,
+                    }}
                 />
             ) : (
                 <ProjectNameSVG name={name} />

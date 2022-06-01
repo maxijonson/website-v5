@@ -16,6 +16,11 @@ export default ({ name, logo }: ExperienceLogoProps) => {
             src={logo}
             title={name}
             alt={name}
+            imageProps={{
+                loading: "lazy",
+                width: `${BULLET_SIZE}px`,
+                height: `${BULLET_SIZE}px`,
+            }}
         />
     );
 };

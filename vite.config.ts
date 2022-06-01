@@ -17,6 +17,13 @@ const fileDirectives: {
     directive: URLSearchParams | ((url: URL) => URLSearchParams);
 }[] = [
     {
+        isMatch: wc("**/src/assets/images/logo/*"),
+        directive: new URLSearchParams({
+            format: "webp",
+            quality: "100",
+        }),
+    },
+    {
         isMatch: wc("**/src/assets/images/landing/background.jpg"),
         directive: new URLSearchParams({
             format: "webp",
@@ -24,17 +31,19 @@ const fileDirectives: {
         }),
     },
     {
-        isMatch: wc("**/src/assets/images/tristan/mtl.jpg"),
+        isMatch: wc("**/src/assets/images/tristan/*"),
         directive: new URLSearchParams({
             format: "webp",
             width: "200",
             height: "200",
+            quality: "100",
         }),
     },
     {
         isMatch: wc("**/src/assets/images/skills/*"),
         directive: new URLSearchParams({
             format: "webp",
+            quality: "60",
             width: "16",
             height: "16",
             fit: "contain",
@@ -46,6 +55,7 @@ const fileDirectives: {
         directive: (url) => {
             return new URLSearchParams({
                 format: "webp",
+                quality: "100",
                 width: "300",
                 height: "160",
                 fit: url.pathname.endsWith("react.jpg") ? "cover" : "contain",
@@ -57,6 +67,7 @@ const fileDirectives: {
         isMatch: wc("**/src/assets/images/experience/*"),
         directive: new URLSearchParams({
             format: "webp",
+            quality: "60",
             width: "25",
             height: "25",
             fit: "cover",
@@ -66,6 +77,7 @@ const fileDirectives: {
         isMatch: wc("**/src/assets/images/education/*"),
         directive: new URLSearchParams({
             format: "webp",
+            quality: "90",
             width: "128",
             height: "64",
             fit: "contain",
