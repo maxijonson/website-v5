@@ -33,6 +33,7 @@ export default ({ image, name }: EducationImageProps) => {
             width="128px"
             src={image}
             alt={name}
+            imageProps={{ loading: "lazy" }}
         />
     );
 };

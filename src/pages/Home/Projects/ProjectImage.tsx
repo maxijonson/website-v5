@@ -34,6 +34,7 @@ export default ({ name, image, cover = false }: ProjectImageProps) => {
                     fit={cover ? "cover" : "contain"}
                     src={image}
                     alt={name}
+                    imageProps={{ loading: "lazy" }}
                 />
             ) : (
                 <ProjectNameSVG name={name} />

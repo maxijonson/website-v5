@@ -11,6 +11,7 @@ export default () => {
                 radius={180}
                 src={ProfilePicture}
                 alt="Tristan Chin"
+                imageProps={{ loading: "lazy" }}
             />
         </Center>
     );

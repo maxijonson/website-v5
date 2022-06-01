@@ -23,6 +23,7 @@ export default ({ name, logo, disabled = false }: SkillLogoProps) => {
             width="16px"
             src={logo}
             alt={name}
+            imageProps={{ loading: "lazy" }}
         />
     );
 };
