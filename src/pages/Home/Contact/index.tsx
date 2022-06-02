@@ -1,10 +1,13 @@
 import { Container, createStyles, Text, Anchor } from "@mantine/core";
+import { useViewportSize } from "@mantine/hooks";
 import { t } from "i18next";
 import React from "react";
 import { Trans } from "react-i18next";
+import LazyLoad from "../../../components/LazyLoad";
 import HomeTitle from "../HomeTitle";
 import ContactSocials from "./ContactSocials";
-import ContactVCard from "./ContactVCard";
+
+const ContactVCard = React.lazy(() => import("./ContactVCard"));
 
 const useStyles = createStyles((theme) => ({
     container: {
@@ -21,6 +24,8 @@ const useStyles = createStyles((theme) => ({
 
 export default React.forwardRef<HTMLDivElement>((_props, ref) => {
     const { classes } = useStyles();
+    const { height: vh } = useViewportSize();
+
     return (
         <Container ref={ref} className={classes.container} fluid>
             <Container>
@@ -38,7 +43,9 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                     />
                 </Text>
                 <ContactSocials />
-                <ContactVCard />
+                <LazyLoad margin={0.5 * vh}>
+                    <ContactVCard />
+                </LazyLoad>
             </Container>
         </Container>
     );
