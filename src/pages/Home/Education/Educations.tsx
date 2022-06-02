@@ -1,18 +1,16 @@
 import { Container, Stack } from "@mantine/core";
 import React from "react";
-import Edu from "./Education";
-import { Education } from "./types";
+import Education from "./Education";
+import useEducation from "./useEducation";
 
-interface EducationsProps {
-    educations: Education[];
-}
+export default () => {
+    const educations = useEducation();
 
-export default ({ educations }: EducationsProps) => {
     return (
         <Container size="sm">
             <Stack mt="xl">
                 {educations.map((education) => (
-                    <Edu key={education.name} education={education} />
+                    <Education key={education.name} education={education} />
                 ))}
             </Stack>
         </Container>

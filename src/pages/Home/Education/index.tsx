@@ -1,10 +1,13 @@
 import { Container, createStyles, Text, useMantineTheme } from "@mantine/core";
+import { useViewportSize } from "@mantine/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import HomeTitle from "../HomeTitle";
 import Transitionner from "../../../components/Transitionner";
-import Educations from "./Educations";
-import useEducation from "./useEducation";
+import LazyLoad from "../../../components/LazyLoad";
+import EducationsSkeleton from "./EducationsSkeleton";
+
+const Educations = React.lazy(() => import("./Educations"));
 
 const useStyles = createStyles((theme) => ({
     container: {
@@ -27,9 +30,9 @@ const useStyles = createStyles((theme) => ({
 
 export default React.forwardRef<HTMLDivElement>((_props, ref) => {
     const { t } = useTranslation(["translation", "home"]);
+    const { height: vh } = useViewportSize();
     const theme = useMantineTheme();
     const { classes } = useStyles();
-    const educations = useEducation();
 
     return (
         <Container ref={ref} className={classes.container} fluid pb="xl">
@@ -44,7 +47,9 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                     title={t("home:education.title")}
                 />
                 <Text className={classes.text}>{t("home:education.text")}</Text>
-                <Educations educations={educations} />
+                <LazyLoad fallback={<EducationsSkeleton />} margin={0.5 * vh}>
+                    <Educations />
+                </LazyLoad>
             </Container>
             <Transitionner
                 type="roundup"
