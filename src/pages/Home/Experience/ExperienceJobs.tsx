@@ -2,11 +2,7 @@ import { Container, createStyles, Timeline, TimelineItem } from "@mantine/core";
 import React from "react";
 import ExperienceJob from "./ExperienceJob";
 import ExperienceLogo from "./ExperienceLogo";
-import { Experience } from "./types";
-
-interface ExperienceTimelineProps {
-    jobs: Experience[];
-}
+import useExperience from "./useExperience";
 
 const useStyles = createStyles((theme) => ({
     timeline: {
@@ -17,8 +13,9 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export default ({ jobs }: ExperienceTimelineProps) => {
+export default () => {
     const { classes } = useStyles();
+    const jobs = useExperience();
 
     return (
         <Container size="sm">

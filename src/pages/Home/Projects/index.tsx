@@ -63,7 +63,7 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                         ]}
                     />
                 </Text>
-                <LazyLoad fallback={<ProjectsGridSkeleton />} margin={vh / 2}>
+                <LazyLoad fallback={<ProjectsGridSkeleton />} margin={0.5 * vh}>
                     <ProjectsGrid />
                 </LazyLoad>
             </Container>

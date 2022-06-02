@@ -1,11 +1,14 @@
 import { Container, createStyles, Text, useMantineTheme } from "@mantine/core";
+import { useViewportSize } from "@mantine/hooks";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import _ from "lodash";
 import HomeTitle from "../HomeTitle";
 import Transitionner from "../../../components/Transitionner";
-import useExperience from "./useExperience";
-import ExperienceJobs from "./ExperienceJobs";
+import LazyLoad from "../../../components/LazyLoad";
+import ExperienceJobsSkeleton from "./ExperienceJobsSkeleton";
+
+const ExperienceJobs = React.lazy(() => import("./ExperienceJobs"));
 
 const useStyles = createStyles((theme) => ({
     container: {
@@ -27,8 +30,8 @@ const useStyles = createStyles((theme) => ({
 export default React.forwardRef<HTMLDivElement>((_props, ref) => {
     const { classes } = useStyles();
     const theme = useMantineTheme();
+    const { height: vh } = useViewportSize();
     const { t } = useTranslation(["translation", "home"]);
-    const jobs = useExperience();
 
     return (
         <Container ref={ref} className={classes.container} fluid pb="xl">
@@ -45,7 +48,12 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                 <Text className={classes.text}>
                     {t("home:experience.text")}
                 </Text>
-                <ExperienceJobs jobs={jobs} />
+                <LazyLoad
+                    fallback={<ExperienceJobsSkeleton />}
+                    margin={0.5 * vh}
+                >
+                    <ExperienceJobs />
+                </LazyLoad>
             </Container>
         </Container>
     );
