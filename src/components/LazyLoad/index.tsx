@@ -20,7 +20,7 @@ interface LazyLoadProps extends SuspenseProps {
     forceLoaded?: boolean;
 
     /**
-     * Distance between the component and the loading trigger. Number in pixels.
+     * Distance between the component and the loading trigger. Number in pixels. String as percent.
      *
      * @default 0
      */

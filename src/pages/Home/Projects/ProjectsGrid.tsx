@@ -2,14 +2,11 @@ import { SimpleGrid, useMantineTheme } from "@mantine/core";
 import _ from "lodash";
 import React from "react";
 import ProjectCard from "./Project";
-import { Project } from "./types";
+import useProjects from "./useProjects";
 
-interface ProjectsGridProps {
-    projects: Project[];
-}
-
-export default ({ projects }: ProjectsGridProps) => {
+export default () => {
     const theme = useMantineTheme();
+    const projects = useProjects();
 
     return (
         <SimpleGrid

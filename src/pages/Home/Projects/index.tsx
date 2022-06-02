@@ -5,13 +5,16 @@ import {
     Text,
     useMantineTheme,
 } from "@mantine/core";
+import { useViewportSize } from "@mantine/hooks";
 import React from "react";
 import _ from "lodash";
 import { Trans, useTranslation } from "react-i18next";
 import Transitionner from "../../../components/Transitionner";
 import HomeTitle from "../HomeTitle";
-import useProjects from "./useProjects";
-import ProjectsGrid from "./ProjectsGrid";
+import LazyLoad from "../../../components/LazyLoad";
+import ProjectsGridSkeleton from "./ProjectsGridSkeleton";
+
+const ProjectsGrid = React.lazy(() => import("./ProjectsGrid"));
 
 const useStyles = createStyles((theme) => ({
     container: {
@@ -33,8 +36,8 @@ const useStyles = createStyles((theme) => ({
 export default React.forwardRef<HTMLDivElement>((_props, ref) => {
     const { classes } = useStyles();
     const theme = useMantineTheme();
+    const { height: vh } = useViewportSize();
     const { t } = useTranslation(["home"]);
-    const projects = useProjects();
 
     return (
         <Container ref={ref} className={classes.container} fluid pb="xl">
@@ -60,7 +63,9 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                         ]}
                     />
                 </Text>
-                <ProjectsGrid projects={projects} />
+                <LazyLoad fallback={<ProjectsGridSkeleton />} margin={vh / 2}>
+                    <ProjectsGrid />
+                </LazyLoad>
             </Container>
         </Container>
     );

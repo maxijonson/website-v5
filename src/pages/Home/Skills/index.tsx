@@ -1,6 +1,7 @@
 import React from "react";
 import _ from "lodash";
 import { Container, createStyles, Text, useMantineTheme } from "@mantine/core";
+import { useViewportSize } from "@mantine/hooks";
 import { useTranslation } from "react-i18next";
 import HomeTitle from "../HomeTitle";
 import Transitionner from "../../../components/Transitionner";
@@ -29,6 +30,7 @@ const useStyles = createStyles((theme) => ({
 export default React.forwardRef<HTMLDivElement>((_props, ref) => {
     const { classes } = useStyles();
     const theme = useMantineTheme();
+    const { height: vh } = useViewportSize();
     const { t } = useTranslation();
 
     return (
@@ -44,7 +46,7 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
                     title={t("home:skills.title")}
                 />
                 <Text className={classes.text}>{t("home:skills.text")}</Text>
-                <LazyLoad fallback={<SkillsGridSkeleton />} margin={250}>
+                <LazyLoad fallback={<SkillsGridSkeleton />} margin={0.5 * vh}>
                     <SkillsGrid />
                 </LazyLoad>
             </Container>
