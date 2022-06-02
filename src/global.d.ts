@@ -1,48 +1,48 @@
 declare module "*.jpg" {
-    const value: any;
+    const value: string;
     export = value;
 }
 
 declare module "*.png" {
-    const value: any;
+    const value: string;
     export = value;
 }
 
 declare module "*.webp" {
-    const value: any;
+    const value: string;
     export = value;
 }
 
 declare module "*.svg" {
-    const value: any;
+    const value: string;
     export = value;
 }
 
 declare module "*.ico" {
-    const value: any;
+    const value: string;
     export = value;
 }
 
 declare module "*.mp4" {
-    const value: any;
+    const value: string;
     export = value;
 }
 
 declare module "*.ttf" {
-    const value: any;
+    const value: string;
     export = value;
 }
 
 declare module "*.vcf" {
-    const value: any;
+    const value: string;
     export = value;
 }
 declare module "*?url" {
-    const value: any;
+    const value: string;
     export = value;
 }
 
 declare module "*?raw" {
-    const value: any;
+    const value: string;
     export = value;
 }

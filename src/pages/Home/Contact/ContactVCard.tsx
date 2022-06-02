@@ -7,8 +7,6 @@ import { FaQrcode } from "react-icons/fa";
 
 import VCardUrlEn from "../../../assets/vcard-en.vcf?url";
 import VCardUrlFr from "../../../assets/vcard-fr.vcf?url";
-import VCardRawEn from "../../../assets/vcard-en.vcf?raw";
-import VCardRawFr from "../../../assets/vcard-fr.vcf?raw";
 
 const FILENAME = "tristanchin.vcf";
 
@@ -18,15 +16,19 @@ export default () => {
     const [showQR, setShowQR] = React.useState(false);
 
     const vcardUrl = i18n.language === "fr" ? VCardUrlFr : VCardUrlEn;
-    const vcardRaw = i18n.language === "fr" ? VCardRawFr : VCardRawEn;
 
-    const handleClick = React.useCallback(() => {
+    const handleClick = React.useCallback(async () => {
         if (os === "ios" || os === "android") {
             window.location.href = vcardUrl;
             return;
         }
 
-        const blob = new Blob([vcardRaw]);
+        const vcardRaw =
+            i18n.language === "fr"
+                ? import("../../../assets/vcard-fr.vcf?raw")
+                : import("../../../assets/vcard-en.vcf?raw");
+        const vcardData = (await vcardRaw).default;
+        const blob = new Blob([vcardData]);
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.href = url;
@@ -36,7 +38,7 @@ export default () => {
         link.click();
         URL.revokeObjectURL(url);
         document.body.removeChild(link);
-    }, [vcardUrl, vcardRaw, os]);
+    }, [vcardUrl, i18n.language, os]);
 
     return (
         <>

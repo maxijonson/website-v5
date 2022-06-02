@@ -109,7 +109,6 @@ const chunkDependencies = () => {
         if (chunked.includes(key)) return;
         chunks[key] = [key];
     });
-    console.info(chunks);
     return chunks;
 };
 
