@@ -3,16 +3,14 @@ import { imagetools } from "vite-imagetools";
 import { resolve } from "path";
 import react from "@vitejs/plugin-react";
 import wc from "wildcard-match";
+import _ from "lodash";
+import { dependencies } from "./package.json";
 
+// An array of wildcard patterns to match files where the Vite compiler should preserve the original file name instead of adding a hash to it.
 const PRESERVED_NAMES: ReturnType<typeof wc>[] = [];
 
-const directives = {
-    webp: new URLSearchParams({
-        format: "webp",
-    }),
-};
-
-const fileDirectives: {
+// an array file directives to override the default Vite compilation params for specific files.
+const FILE_DIRECTIVES: {
     isMatch: ReturnType<typeof wc>;
     directive: URLSearchParams | ((url: URL) => URLSearchParams);
 }[] = [
@@ -92,13 +90,36 @@ const fileDirectives: {
     },
 ];
 
+// Dependencies to be chunked together instead of individually.
+const MANUAL_CHUNKS: { [chunkName: string]: (keyof typeof dependencies)[] } = {
+    react: ["react", "react-dom", "react-router-dom"],
+    mantine: ["@mantine/core", "@mantine/hooks"],
+    i18next: [
+        "i18next",
+        "i18next-browser-languagedetector",
+        "i18next-resources-to-backend",
+        "react-i18next",
+    ],
+};
+
+const chunkDependencies = () => {
+    const chunks: { [key: string]: string[] } = {};
+    const chunked: string[] = _(MANUAL_CHUNKS).map().flatten().value();
+    Object.keys(dependencies).forEach((key) => {
+        if (chunked.includes(key)) return;
+        chunks[key] = [key];
+    });
+    console.info(chunks);
+    return chunks;
+};
+
 export default defineConfig({
     plugins: [
         react(),
         imagetools({
             include: "**/*.{jpeg,jpg,png,webp}*",
             defaultDirectives: (url) => {
-                const fileDirective = fileDirectives.find(({ isMatch }) =>
+                const fileDirective = FILE_DIRECTIVES.find(({ isMatch }) =>
                     isMatch(url.pathname)
                 );
 
@@ -108,7 +129,11 @@ export default defineConfig({
                     }
                     return fileDirective.directive;
                 }
-                return directives.webp;
+
+                // Default directive. Convert asset to webp format.
+                return new URLSearchParams({
+                    format: "webp",
+                });
             },
         }),
     ],
@@ -118,6 +143,7 @@ export default defineConfig({
         outDir: "../dist",
         emptyOutDir: true,
         assetsInlineLimit: 0,
+        sourcemap: false,
         rollupOptions: {
             input: resolve(__dirname, "src/index.html"),
             output: {
@@ -130,6 +156,10 @@ export default defineConfig({
                         return "assets/[name].[ext]";
                     }
                     return "assets/[name].[hash].[ext]";
+                },
+                manualChunks: {
+                    ...MANUAL_CHUNKS,
+                    ...chunkDependencies(),
                 },
             },
         },

@@ -1,5 +1,4 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Loading from "../Loading";
 import SmartSuspense from "../SmartSuspense";
@@ -11,7 +10,6 @@ const Home = React.lazy(() => import("../../pages/Home"));
 export default () => {
     const [isLoading, setIsLoading] = React.useState(true);
     const [animationRan, setAnimationRan] = React.useState(false);
-    const { t } = useTranslation();
 
     React.useEffect(() => {
         const timeout = setTimeout(() => {
@@ -28,7 +26,6 @@ export default () => {
                 size={100}
                 overlayOpacity={1}
                 animationDuration={3000}
-                message={t("welcome")}
                 fixed
                 locked
             />
