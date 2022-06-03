@@ -1,7 +1,7 @@
 import { createStyles } from "@mantine/core";
 import React from "react";
 
-interface TransitionnerProps {
+export interface TransitionnerProps {
     type: "slantasc" | "slantdesc" | "roundup" | "rounddown";
     from: string;
     to: string;

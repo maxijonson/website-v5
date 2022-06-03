@@ -103,5 +103,9 @@
         "text": "Je ne suis pas actuellement à la recherche de nouvelles opportunités, mais si vous voulez entrer en contact, n'hésitez pas à me joindre à <0>{{email}}</0> ou à me trouver sur mes différents réseaux sociaux !",
         "vcard": "Télécharger le contact",
         "qr": "Scannez pour télécharger le contact"
+    },
+    "sectionerror": {
+        "title": "Eh bien, c'est gênant...",
+        "text": "Un problème est survenu lors du chargement de cette section. Vous pouvez essayer de recharger la page."
     }
 }

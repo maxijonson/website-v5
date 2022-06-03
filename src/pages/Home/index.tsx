@@ -13,6 +13,7 @@ import Footer from "./Footer";
 import Landing from "./Landing";
 import Nav from "./Nav";
 import Projects from "./Projects";
+import SectionCatcher from "./SectionCatcher";
 import Skills from "./Skills";
 
 export default () => {
@@ -59,14 +60,30 @@ export default () => {
     return (
         <>
             <Nav headers={headers} forceVisible={forceNavVisible} />
-            <Landing ref={landingIntersectionRef} />
-            <Bio ref={bio.targetRef} />
-            <Skills ref={skills.targetRef} />
-            <Projects ref={projects.targetRef} />
-            <Experience ref={experience.targetRef} />
-            <Education ref={education.targetRef} />
-            <Contact ref={mergedContactRef} />
-            <Footer />
+            <SectionCatcher>
+                <Landing ref={landingIntersectionRef} />
+            </SectionCatcher>
+            <SectionCatcher>
+                <Bio ref={bio.targetRef} />
+            </SectionCatcher>
+            <SectionCatcher>
+                <Skills ref={skills.targetRef} />
+            </SectionCatcher>
+            <SectionCatcher>
+                <Projects ref={projects.targetRef} />
+            </SectionCatcher>
+            <SectionCatcher>
+                <Experience ref={experience.targetRef} />
+            </SectionCatcher>
+            <SectionCatcher>
+                <Education ref={education.targetRef} />
+            </SectionCatcher>
+            <SectionCatcher>
+                <Contact ref={mergedContactRef} />
+            </SectionCatcher>
+            <SectionCatcher>
+                <Footer />
+            </SectionCatcher>
         </>
     );
 };

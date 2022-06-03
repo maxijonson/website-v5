@@ -104,5 +104,9 @@
         "text": "I'm not currently looking for new opportunities, but if you want to get in touch, feel free to reach out to me at <0>{{email}}</0> or find me on my different socials!",
         "vcard": "Download Contact Card",
         "qr": "Scan to download contact card"
+    },
+    "sectionerror": {
+        "title": "Well that's awkward...",
+        "text": "Something went wrong while trying to load this section. You can try to reload the page."
     }
 }
