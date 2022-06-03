@@ -2,23 +2,18 @@ import fs from "fs-extra";
 import path from "path";
 
 const OUT = path.resolve(__dirname, "../../dist");
-const OUT_ASSETS = path.resolve(OUT, "assets");
-
 const SRC = path.resolve(__dirname, "..");
-const SRC_ASSETS = path.resolve(SRC, "assets");
-const SRC_IMAGES = path.resolve(SRC_ASSETS, "images");
 
-// Copy profile pictures
-fs.copySync(
-    path.resolve(SRC_IMAGES, "tristan"),
-    path.resolve(OUT_ASSETS, "tristan")
-);
+const ASSETS = path.join("assets");
+const ASSETS_IMAGES = path.join(ASSETS, "images");
 
-// Copy logos
-fs.copySync(path.resolve(SRC_IMAGES, "logo"), path.resolve(OUT_ASSETS, "logo"));
+const COPY_PATHS = [
+    path.join(ASSETS_IMAGES, "tristan"),
+    path.join(ASSETS_IMAGES, "maxijonson"),
+    path.join(ASSETS_IMAGES, "logo"),
+    path.join(ASSETS_IMAGES, "meta"),
+];
 
-// Copy OG images
-fs.copySync(
-    path.resolve(SRC_IMAGES, "meta/og-image.jpg"),
-    path.resolve(OUT_ASSETS, "meta/og-image.jpg")
-);
+COPY_PATHS.forEach((copyPath) => {
+    fs.copySync(path.resolve(SRC, copyPath), path.resolve(OUT, copyPath));
+});

@@ -6,10 +6,9 @@ import wc from "wildcard-match";
 import _ from "lodash";
 import { dependencies } from "./package.json";
 
-// An array of wildcard patterns to match files where the Vite compiler should preserve the original file name instead of adding a hash to it.
-const PRESERVED_NAMES: ReturnType<typeof wc>[] = [];
-
-// an array file directives to override the default Vite compilation params for specific files.
+/**
+ * an array file directives to override the default Vite compilation params for specific files.
+ */
 const FILE_DIRECTIVES: {
     isMatch: ReturnType<typeof wc>;
     directive: URLSearchParams | ((url: URL) => URLSearchParams);
@@ -90,7 +89,9 @@ const FILE_DIRECTIVES: {
     },
 ];
 
-// Dependencies to be chunked together instead of individually.
+/**
+ * Dependencies to be chunked together instead of individually.
+ */
 const MANUAL_CHUNKS: { [chunkName: string]: (keyof typeof dependencies)[] } = {
     react: ["react", "react-dom", "react-router-dom"],
     mantine: ["@mantine/core", "@mantine/hooks"],
@@ -146,14 +147,9 @@ export default defineConfig({
         rollupOptions: {
             input: resolve(__dirname, "src/index.html"),
             output: {
-                assetFileNames: (chunkInfo) => {
-                    if (
-                        PRESERVED_NAMES.some((isMatch) =>
-                            isMatch(chunkInfo.name ?? "")
-                        )
-                    ) {
-                        return "assets/[name].[ext]";
-                    }
+                assetFileNames: () => {
+                    // If you want to preserve the asset file name, use the post-build script instead to copy the file to the dist folder.
+                    // Assets used in the website should have a hash to prevent showing outdated assets due to caching.
                     return "assets/[name].[hash].[ext]";
                 },
                 manualChunks: {
