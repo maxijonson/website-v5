@@ -2,10 +2,8 @@ import { Burger, createStyles, Group, useMantineTheme } from "@mantine/core";
 import { useViewportSize } from "@mantine/hooks";
 import React from "react";
 import MenuDrawer from "./MenuDrawer";
-import { NavHeader } from "./types";
 
 interface MobileMenuProps {
-    headers: NavHeader[];
     onChange?: (opened: boolean) => void;
     hidden?: boolean;
 }
@@ -16,7 +14,7 @@ const useStyles = createStyles(() => ({
     },
 }));
 
-export default ({ headers, onChange, hidden = false }: MobileMenuProps) => {
+export default ({ onChange, hidden = false }: MobileMenuProps) => {
     const [menuOpen, setMenuOpen] = React.useState(false);
     const theme = useMantineTheme();
     const { width } = useViewportSize();
@@ -49,11 +47,7 @@ export default ({ headers, onChange, hidden = false }: MobileMenuProps) => {
                     name="menu"
                 />
             </Group>
-            <MenuDrawer
-                headers={headers}
-                onChange={handleChange}
-                opened={menuOpen}
-            />
+            <MenuDrawer onChange={handleChange} opened={menuOpen} />
         </>
     );
 };

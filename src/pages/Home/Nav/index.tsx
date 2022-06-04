@@ -13,7 +13,6 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import MobileMenu from "./MobileMenu";
 import NavLogo from "./NavLogo";
 import NavDivider from "./NavDivider";
-import NavContext from "./NavContext";
 
 interface NavProps {
     forceVisible: boolean;
@@ -66,7 +65,6 @@ export default ({ forceVisible }: NavProps) => {
     const { width, height } = useViewportSize();
     const [{ y }] = useWindowScroll();
 
-    const { headers } = React.useContext(NavContext);
     const [menuOpen, setMenuOpen] = React.useState(false);
     const [lastY, setLastY] = React.useState(y);
     const [visible, setVisible] = React.useState(true);
@@ -92,17 +90,13 @@ export default ({ forceVisible }: NavProps) => {
                 <Group className={classes.containerGroup}>
                     <NavLogo />
                     <Group>
-                        <DesktopMenu
-                            headers={headers}
-                            hidden={!isDesktopSize}
-                        />
+                        <DesktopMenu hidden={!isDesktopSize} />
                         <NavDivider hidden={!isDesktopSize} />
                         <LanguageSwitcher />
                         <NavDivider hidden={isDesktopSize} />
                         <MobileMenu
-                            headers={headers}
-                            onChange={setMenuOpen}
                             hidden={isDesktopSize}
+                            onChange={setMenuOpen}
                         />
                     </Group>
                 </Group>

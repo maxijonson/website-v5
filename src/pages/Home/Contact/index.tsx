@@ -26,8 +26,8 @@ const useStyles = createStyles((theme) => ({
 export default React.forwardRef<HTMLDivElement>((_props, ref) => {
     const { classes } = useStyles();
     const { height: vh } = useViewportSize();
-    const scrollTarget = useNavRegister(t("home:contact.title"));
-    const mergedRef = useMergedRef(ref, scrollTarget.targetRef);
+    const scrollRef = useNavRegister(t("home:contact.title"));
+    const mergedRef = useMergedRef(ref, scrollRef);
 
     return (
         <Container ref={mergedRef} className={classes.container} fluid>

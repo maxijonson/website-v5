@@ -39,15 +39,10 @@ export default () => {
     const theme = useMantineTheme();
     const { height: vh } = useViewportSize();
     const { t } = useTranslation(["home"]);
-    const scrollTarget = useNavRegister(t("home:projects.title"));
+    const scrollRef = useNavRegister(t("home:projects.title"));
 
     return (
-        <Container
-            ref={scrollTarget.targetRef}
-            className={classes.container}
-            fluid
-            pb="xl"
-        >
+        <Container ref={scrollRef} className={classes.container} fluid pb="xl">
             <Transitionner
                 type="slantdesc"
                 from={theme.colors.gray[2]}

@@ -9,10 +9,9 @@ import {
 import _ from "lodash";
 import React from "react";
 import HeaderAnchor from "./HeaderAnchor";
-import { NavHeader } from "./types";
+import NavContext from "./NavContext";
 
 interface MenuDrawerProps {
-    headers: NavHeader[];
     opened: boolean;
     onChange?: (value: boolean) => void;
 }
@@ -47,8 +46,9 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export default ({ headers, opened, onChange }: MenuDrawerProps) => {
+export default ({ opened, onChange }: MenuDrawerProps) => {
     const { classes } = useStyles();
+    const { headers } = React.useContext(NavContext);
 
     return (
         <GroupedTransition
@@ -85,7 +85,7 @@ export default ({ headers, opened, onChange }: MenuDrawerProps) => {
                                         key={header.name}
                                         size="xl"
                                         onClick={() => {
-                                            header.element.scrollIntoView();
+                                            header.scrollIntoView();
                                             onChange?.(false);
                                         }}
                                     >

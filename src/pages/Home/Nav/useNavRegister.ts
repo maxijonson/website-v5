@@ -5,20 +5,20 @@ import { NavHeader } from "./types";
 
 export default (name: string) => {
     const scrollTarget = useScrollIntoView<HTMLDivElement>();
+    const { scrollIntoView } = scrollTarget;
     const { registerHeader, unregisterHeader } = React.useContext(NavContext);
 
     React.useEffect(() => {
         const header: NavHeader = {
             name,
-            element: scrollTarget,
+            scrollIntoView,
         };
 
         registerHeader(header);
         return () => {
             unregisterHeader(header);
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [name, registerHeader, unregisterHeader]);
+    }, [name, registerHeader, scrollIntoView, unregisterHeader]);
 
-    return scrollTarget;
+    return scrollTarget.targetRef;
 };

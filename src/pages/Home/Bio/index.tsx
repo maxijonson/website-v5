@@ -22,15 +22,10 @@ const useStyles = createStyles((theme) => ({
 export default () => {
     const { t } = useTranslation(["home"]);
     const { classes } = useStyles();
-    const scrollTarget = useNavRegister(t("home:bio.title"));
+    const scrollRef = useNavRegister(t("home:bio.title"));
 
     return (
-        <Container
-            ref={scrollTarget.targetRef}
-            className={classes.container}
-            fluid
-            px={0}
-        >
+        <Container ref={scrollRef} className={classes.container} fluid px={0}>
             <Container>
                 <HomeTitle title={t("home:bio.title")} />
                 <Stack spacing="xl" mx="xl" mt="xl">

@@ -7,6 +7,7 @@ import HomeTitle from "../HomeTitle";
 import Transitionner from "../../../components/Transitionner";
 import LazyLoad from "../../../components/LazyLoad";
 import ExperienceJobsSkeleton from "./ExperienceJobsSkeleton";
+import useNavRegister from "../Nav/useNavRegister";
 
 const ExperienceJobs = React.lazy(() => import("./ExperienceJobs"));
 
@@ -32,9 +33,10 @@ export default () => {
     const theme = useMantineTheme();
     const { height: vh } = useViewportSize();
     const { t } = useTranslation(["translation", "home"]);
+    const scrollRef = useNavRegister(t("home:experience.title"));
 
     return (
-        <Container className={classes.container} fluid pb="xl">
+        <Container ref={scrollRef} className={classes.container} fluid pb="xl">
             <Transitionner
                 type="slantasc"
                 from={theme.colors.gray[0]}

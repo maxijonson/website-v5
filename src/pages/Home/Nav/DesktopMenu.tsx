@@ -2,14 +2,15 @@ import { Group } from "@mantine/core";
 import _ from "lodash";
 import React from "react";
 import HeaderAnchor from "./HeaderAnchor";
-import { NavHeader } from "./types";
+import NavContext from "./NavContext";
 
 interface DesktopMenuProps {
-    headers: NavHeader[];
     hidden?: boolean;
 }
 
-export default ({ headers, hidden = false }: DesktopMenuProps) => {
+export default ({ hidden = false }: DesktopMenuProps) => {
+    const { headers } = React.useContext(NavContext);
+
     if (hidden) {
         return null;
     }
@@ -19,7 +20,7 @@ export default ({ headers, hidden = false }: DesktopMenuProps) => {
             {_.map(headers, (header) => (
                 <HeaderAnchor
                     key={header.name}
-                    onClick={() => header.element.scrollIntoView()}
+                    onClick={() => header.scrollIntoView()}
                 >
                     {header.name}
                 </HeaderAnchor>
