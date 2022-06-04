@@ -10,7 +10,16 @@ export default ({ children }: NavContextProviderProps) => {
     const [headers, setHeaders] = React.useState<NavHeader[]>([]);
 
     const handleRegisterHeader = React.useCallback((header: NavHeader) => {
-        setHeaders((current) => [...current, header]);
+        setHeaders((current) => {
+            const sorted = [...current, header].sort(
+                (
+                    { order: a = Number.POSITIVE_INFINITY },
+                    { order: b = Number.POSITIVE_INFINITY }
+                ) => a - b
+            );
+
+            return sorted;
+        });
     }, []);
 
     const handleUnregisterHeader = React.useCallback((header: NavHeader) => {
