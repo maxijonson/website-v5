@@ -28,7 +28,7 @@ export default () => {
             threshold: 0.5,
         });
 
-    const bio = useScrollIntoView<HTMLDivElement>({ offset: 50 });
+    const bio = useScrollIntoView<HTMLDivElement>();
     const skills = useScrollIntoView<HTMLDivElement>();
     const projects = useScrollIntoView<HTMLDivElement>();
     const experience = useScrollIntoView<HTMLDivElement>();
@@ -55,7 +55,7 @@ export default () => {
 
     React.useEffect(() => {
         document.title = t("home:title");
-    }, [i18n.language]);
+    }, [i18n.language, t]);
 
     return (
         <>

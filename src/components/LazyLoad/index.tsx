@@ -1,5 +1,6 @@
 import { useIntersection } from "@mantine/hooks";
 import React, { Suspense, SuspenseProps } from "react";
+import LazyLoadContext from "./LazyLoadContext";
 import Load from "./Load";
 
 interface LazyLoadProps extends SuspenseProps {
@@ -34,6 +35,13 @@ interface LazyLoadProps extends SuspenseProps {
      * @default 0
      */
     threshold?: number;
+
+    /**
+     * A unique ID that will be passed to the `LazyLoadContext.onLoad` to identify the loaded component.
+     *
+     * @default undefined
+     */
+    id?: string;
 }
 
 export default ({
@@ -42,9 +50,13 @@ export default ({
     loaded = false,
     margin = 0,
     threshold = 0,
+    id,
     ...suspenseProps
 }: LazyLoadProps) => {
-    const [isLoaded, setIsLoaded] = React.useState(loaded); // Once true, always true
+    const [isLoaded, setIsLoaded] = React.useState(loaded);
+    const prevIsLoaded = React.useRef(isLoaded);
+    const ctx = React.useContext(LazyLoadContext);
+
     const [observerRef, observer] = useIntersection({
         threshold,
         rootMargin: typeof margin === "number" ? `${margin}px` : margin,
@@ -61,6 +73,16 @@ export default ({
             return current;
         });
     }, [loaded, observer?.isIntersecting, forceLoaded]);
+
+    React.useEffect(() => {
+        if (isLoaded === prevIsLoaded.current) return;
+        if (isLoaded) {
+            ctx.onLoad(id);
+        } else {
+            ctx.onUnload(id);
+        }
+        prevIsLoaded.current = isLoaded;
+    }, [isLoaded, id, ctx]);
 
     return (
         <>
