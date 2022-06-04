@@ -27,14 +27,14 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export default React.forwardRef<HTMLDivElement>((_props, ref) => {
+export default () => {
     const { classes } = useStyles();
     const theme = useMantineTheme();
     const { height: vh } = useViewportSize();
     const { t } = useTranslation(["translation", "home"]);
 
     return (
-        <Container ref={ref} className={classes.container} fluid pb="xl">
+        <Container className={classes.container} fluid pb="xl">
             <Transitionner
                 type="slantasc"
                 from={theme.colors.gray[0]}
@@ -57,4 +57,4 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
             </Container>
         </Container>
     );
-});
+};

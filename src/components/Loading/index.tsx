@@ -42,7 +42,7 @@ export default ({
 
     React.useEffect(() => {
         setScrollLocked(locked && visible);
-    }, [locked, visible]);
+    }, [locked, setScrollLocked, visible]);
 
     return (
         <LoadingOverlay

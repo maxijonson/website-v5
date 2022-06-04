@@ -7,6 +7,7 @@ import ProjectSkeleton from "./ProjectSkeleton";
 export default () => {
     const theme = useMantineTheme();
     const { width } = useViewportSize();
+
     const groups = React.useMemo(() => {
         if (width <= theme.breakpoints.sm) {
             return 1;
@@ -15,7 +16,7 @@ export default () => {
             return 2;
         }
         return 3;
-    }, [width]);
+    }, [theme.breakpoints.md, theme.breakpoints.sm, width]);
 
     return (
         <SimpleGrid

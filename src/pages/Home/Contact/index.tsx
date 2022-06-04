@@ -1,10 +1,11 @@
 import { Container, createStyles, Text, Anchor } from "@mantine/core";
-import { useViewportSize } from "@mantine/hooks";
+import { useMergedRef, useViewportSize } from "@mantine/hooks";
 import { t } from "i18next";
 import React from "react";
 import { Trans } from "react-i18next";
 import LazyLoad from "../../../components/LazyLoad";
 import HomeTitle from "../HomeTitle";
+import useNavRegister from "../Nav/useNavRegister";
 import ContactSocials from "./ContactSocials";
 
 const ContactVCard = React.lazy(() => import("./ContactVCard"));
@@ -25,9 +26,11 @@ const useStyles = createStyles((theme) => ({
 export default React.forwardRef<HTMLDivElement>((_props, ref) => {
     const { classes } = useStyles();
     const { height: vh } = useViewportSize();
+    const scrollTarget = useNavRegister(t("home:contact.title"));
+    const mergedRef = useMergedRef(ref, scrollTarget.targetRef);
 
     return (
-        <Container ref={ref} className={classes.container} fluid>
+        <Container ref={mergedRef} className={classes.container} fluid>
             <Container>
                 <HomeTitle title={t("home:contact.title")} />
                 <Text className={classes.text}>

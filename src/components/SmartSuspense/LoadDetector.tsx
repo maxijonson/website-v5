@@ -7,6 +7,6 @@ interface LoadDetectorProps {
 export default ({ onLoad }: LoadDetectorProps) => {
     React.useEffect(() => {
         onLoad();
-    }, []);
+    }, [onLoad]);
     return null;
 };

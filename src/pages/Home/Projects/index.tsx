@@ -13,6 +13,7 @@ import Transitionner from "../../../components/Transitionner";
 import HomeTitle from "../HomeTitle";
 import LazyLoad from "../../../components/LazyLoad";
 import ProjectsGridSkeleton from "./ProjectsGridSkeleton";
+import useNavRegister from "../Nav/useNavRegister";
 
 const ProjectsGrid = React.lazy(() => import("./ProjectsGrid"));
 
@@ -33,14 +34,20 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export default React.forwardRef<HTMLDivElement>((_props, ref) => {
+export default () => {
     const { classes } = useStyles();
     const theme = useMantineTheme();
     const { height: vh } = useViewportSize();
     const { t } = useTranslation(["home"]);
+    const scrollTarget = useNavRegister(t("home:projects.title"));
 
     return (
-        <Container ref={ref} className={classes.container} fluid pb="xl">
+        <Container
+            ref={scrollTarget.targetRef}
+            className={classes.container}
+            fluid
+            pb="xl"
+        >
             <Transitionner
                 type="slantdesc"
                 from={theme.colors.gray[2]}
@@ -69,4 +76,4 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
             </Container>
         </Container>
     );
-});
+};

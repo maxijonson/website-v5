@@ -2,6 +2,7 @@ import { Container, createStyles, Stack, Text } from "@mantine/core";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import HomeTitle from "../HomeTitle";
+import useNavRegister from "../Nav/useNavRegister";
 
 import BioImage from "./BioImage";
 
@@ -18,12 +19,18 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export default React.forwardRef<HTMLDivElement>((_props, ref) => {
+export default () => {
     const { t } = useTranslation(["home"]);
     const { classes } = useStyles();
+    const scrollTarget = useNavRegister(t("home:bio.title"));
 
     return (
-        <Container ref={ref} className={classes.container} fluid px={0}>
+        <Container
+            ref={scrollTarget.targetRef}
+            className={classes.container}
+            fluid
+            px={0}
+        >
             <Container>
                 <HomeTitle title={t("home:bio.title")} />
                 <Stack spacing="xl" mx="xl" mt="xl">
@@ -33,4 +40,4 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
             </Container>
         </Container>
     );
-});
+};

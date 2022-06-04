@@ -9,14 +9,13 @@ import { useViewportSize, useWindowScroll } from "@mantine/hooks";
 import _ from "lodash";
 import React from "react";
 import DesktopMenu from "./DesktopMenu";
-import { NavHeader } from "./types";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MobileMenu from "./MobileMenu";
 import NavLogo from "./NavLogo";
 import NavDivider from "./NavDivider";
+import NavContext from "./NavContext";
 
 interface NavProps {
-    headers: NavHeader[];
     forceVisible: boolean;
 }
 
@@ -62,11 +61,12 @@ const useStyles = createStyles(
     })
 );
 
-export default ({ headers, forceVisible }: NavProps) => {
+export default ({ forceVisible }: NavProps) => {
     const theme = useMantineTheme();
     const { width, height } = useViewportSize();
     const [{ y }] = useWindowScroll();
 
+    const { headers } = React.useContext(NavContext);
     const [menuOpen, setMenuOpen] = React.useState(false);
     const [lastY, setLastY] = React.useState(y);
     const [visible, setVisible] = React.useState(true);
@@ -84,7 +84,7 @@ export default ({ headers, forceVisible }: NavProps) => {
             setVisible(direction === "up");
         }
         setLastY(y);
-    });
+    }, [y, lastY]);
 
     return (
         <Header className={classes.root} height={60} p={0} fixed>

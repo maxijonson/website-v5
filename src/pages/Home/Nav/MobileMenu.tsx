@@ -22,10 +22,13 @@ export default ({ headers, onChange, hidden = false }: MobileMenuProps) => {
     const { width } = useViewportSize();
     const { classes } = useStyles();
 
-    const handleChange = React.useCallback((value: boolean) => {
-        setMenuOpen(value);
-        onChange?.(value);
-    }, []);
+    const handleChange = React.useCallback(
+        (value: boolean) => {
+            setMenuOpen(value);
+            onChange?.(value);
+        },
+        [onChange]
+    );
 
     const handleClick = React.useCallback(() => {
         handleChange(!menuOpen);

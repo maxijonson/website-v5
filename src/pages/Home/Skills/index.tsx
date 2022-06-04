@@ -7,6 +7,7 @@ import HomeTitle from "../HomeTitle";
 import Transitionner from "../../../components/Transitionner";
 import LazyLoad from "../../../components/LazyLoad";
 import SkillsGridSkeleton from "./SkillsGridSkeleton";
+import useNavRegister from "../Nav/useNavRegister";
 
 const SkillsGrid = React.lazy(() => import("./SkillsGrid"));
 
@@ -27,14 +28,20 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export default React.forwardRef<HTMLDivElement>((_props, ref) => {
+export default () => {
     const { classes } = useStyles();
     const theme = useMantineTheme();
     const { height: vh } = useViewportSize();
     const { t } = useTranslation();
+    const scrollTarget = useNavRegister(t("home:skills.title"));
 
     return (
-        <Container ref={ref} className={classes.container} fluid pb="xl">
+        <Container
+            ref={scrollTarget.targetRef}
+            className={classes.container}
+            fluid
+            pb="xl"
+        >
             <Transitionner
                 type="rounddown"
                 from={theme.colors.gray[0]}
@@ -52,4 +59,4 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
             </Container>
         </Container>
     );
-});
+};

@@ -1,14 +1,14 @@
 import React from "react";
 import LazyLoadContext, {
     LazyLoadContextListener,
-    LazyLoadContextParams,
+    LazyLoadContextValue,
 } from "./LazyLoadContext";
 
-interface LazyLoadContextProps {
+interface LazyLoadContextProviderProps {
     children: React.ReactNode;
 }
 
-export default ({ children }: LazyLoadContextProps) => {
+export default ({ children }: LazyLoadContextProviderProps) => {
     const [listeners, setListeners] = React.useState<LazyLoadContextListener[]>(
         []
     );
@@ -41,7 +41,7 @@ export default ({ children }: LazyLoadContextProps) => {
         [listeners]
     );
 
-    const providerValue = React.useMemo<LazyLoadContextParams>(
+    const providerValue = React.useMemo<LazyLoadContextValue>(
         () => ({
             addListener: handleAddListener,
             removeListener: handleRemoveListener,

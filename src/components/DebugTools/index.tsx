@@ -12,7 +12,7 @@ export default () => {
     React.useEffect(() => {
         (window as any).toggleColorScheme = toggleColorScheme;
         (window as any).changeLanguage = changeLanguage;
-    }, []);
+    }, [toggleColorScheme]);
 
     return null;
 };

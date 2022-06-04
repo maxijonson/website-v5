@@ -6,6 +6,7 @@ import HomeTitle from "../HomeTitle";
 import Transitionner from "../../../components/Transitionner";
 import LazyLoad from "../../../components/LazyLoad";
 import EducationsSkeleton from "./EducationsSkeleton";
+import useNavRegister from "../Nav/useNavRegister";
 
 const Educations = React.lazy(() => import("./Educations"));
 
@@ -28,14 +29,20 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export default React.forwardRef<HTMLDivElement>((_props, ref) => {
+export default () => {
     const { t } = useTranslation(["translation", "home"]);
     const { height: vh } = useViewportSize();
     const theme = useMantineTheme();
     const { classes } = useStyles();
+    const scrollTarget = useNavRegister(t("home:education.title"));
 
     return (
-        <Container ref={ref} className={classes.container} fluid pb="xl">
+        <Container
+            ref={scrollTarget.targetRef}
+            className={classes.container}
+            fluid
+            pb="xl"
+        >
             <Transitionner
                 type="slantdesc"
                 from={theme.colors.gray[2]}
@@ -58,4 +65,4 @@ export default React.forwardRef<HTMLDivElement>((_props, ref) => {
             />
         </Container>
     );
-});
+};

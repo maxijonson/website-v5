@@ -8,6 +8,7 @@
     "scripts": {
         "start": "vite serve src --host",
         "watch": "nodemon",
+        "lint": "eslint .",
         "clean": "rm -rf dist",
         "build": "npm-run-all clean && vite build && ts-node src/scripts/post-build.ts",
         "build:cjs": "tsc -p tsconfig.prod.json --module CommonJS --outDir dist/cjs && cp .build/package.cjs.json dist/cjs/package.json",
@@ -69,6 +70,7 @@
         "eslint-config-typescript": "3.0.0",
         "eslint-plugin-import": "2.26.0",
         "eslint-plugin-prettier": "4.0.0",
+        "eslint-plugin-react-hooks": "^4.5.0",
         "fluent-ffmpeg": "^2.1.2",
         "fs-extra": "^10.1.0",
         "nodemon": "2.0.15",
