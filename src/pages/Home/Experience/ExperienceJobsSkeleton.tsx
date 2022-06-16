@@ -7,7 +7,7 @@ export default () => {
     return (
         <Container size="sm">
             <Timeline mt="xl">
-                {_.times(3, (i) => (
+                {_.times(5, (i) => (
                     <TimelineItem
                         key={i}
                         title={<Skeleton height={25} />}
