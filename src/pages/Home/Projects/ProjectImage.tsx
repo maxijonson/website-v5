@@ -33,7 +33,7 @@ export default ({ name, image, cover = false }: ProjectImageProps) => {
         >
             {image ? (
                 <Image
-                    width={W}
+                    width={`max(${W}px, 100%)`}
                     height={H}
                     fit={cover ? "cover" : "contain"}
                     src={image}
