@@ -43,7 +43,6 @@
     "dependencies": {
         "@mantine/core": "^4.2.6",
         "@mantine/hooks": "^4.2.6",
-        "dotenv": "16.0.0",
         "i18next": "^21.8.0",
         "i18next-browser-languagedetector": "^6.1.4",
         "i18next-resources-to-backend": "^1.0.0",
@@ -64,6 +63,7 @@
         "@typescript-eslint/eslint-plugin": "^5.31.0",
         "@typescript-eslint/parser": "^5.31.0",
         "@vitejs/plugin-react": "^2.0.0",
+        "dotenv": "^16.0.1",
         "eslint": "8.13.0",
         "eslint-config-airbnb": "19.0.4",
         "eslint-config-prettier": "8.5.0",
