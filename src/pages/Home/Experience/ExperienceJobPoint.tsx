@@ -1,4 +1,4 @@
-import { ListItem } from "@mantine/core";
+import { List } from "@mantine/core";
 import React from "react";
 
 interface ExperienceJobPointProps {
@@ -6,5 +6,5 @@ interface ExperienceJobPointProps {
 }
 
 export default ({ jobPoint }: ExperienceJobPointProps) => {
-    return <ListItem>{jobPoint}</ListItem>;
+    return <List.Item>{jobPoint}</List.Item>;
 };

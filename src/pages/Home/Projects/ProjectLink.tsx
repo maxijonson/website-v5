@@ -10,7 +10,7 @@ export default ({ link }: ProjectLinkProps) => {
     return (
         <ActionIcon
             key={link.url}
-            variant="hover"
+            variant="subtle"
             color="dark"
             component="a"
             href={link.url}

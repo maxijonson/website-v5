@@ -9,7 +9,7 @@
         "start": "vite serve src --host",
         "lint": "eslint .",
         "clean": "rm -rf dist",
-        "build": "npm-run-all clean && vite build && ts-node src/scripts/post-build.ts",
+        "build": "npm-run-all clean && tsc -p tsconfig.prod.json --noEmit && vite build && ts-node src/scripts/post-build.ts",
         "build:cjs": "tsc -p tsconfig.prod.json --module CommonJS --outDir dist/cjs && cp .build/package.cjs.json dist/cjs/package.json",
         "build:esm": "tsc -p tsconfig.prod.json && cp .build/package.esm.json dist/esm/package.json",
         "build:types": "tsc -p tsconfig.prod.json --declaration --declarationMap --emitDeclarationOnly --declarationDir dist/@types",
@@ -40,8 +40,8 @@
         "node": "16.x"
     },
     "dependencies": {
-        "@mantine/core": "^4.2.6",
-        "@mantine/hooks": "^4.2.6",
+        "@mantine/core": "^5.0.0",
+        "@mantine/hooks": "^5.0.0",
         "i18next": "^21.8.0",
         "i18next-browser-languagedetector": "^6.1.4",
         "i18next-resources-to-backend": "^1.0.0",

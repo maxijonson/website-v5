@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import { Global } from "@mantine/core";
 import _ from "lodash";
 
@@ -17,7 +17,11 @@ import LatoBlackItalic from "../../assets/fonts/Lato/Lato-BlackItalic.ttf";
 // Staatliches
 import StaatlichesRegular from "../../assets/fonts/Staatliches/Staatliches-Regular.ttf";
 
-type Font = [font: any, weight: number | string, style: string];
+type Font = [
+    font: CSSProperties["fontFamily"],
+    weight: CSSProperties["fontWeight"],
+    style: CSSProperties["fontStyle"]
+];
 
 export default () => {
     const lato = React.useMemo<Font[]>(() => {

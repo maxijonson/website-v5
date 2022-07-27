@@ -17,7 +17,9 @@ export default () => {
                 }`}
             </Text>
             <Text>Tristan Chin</Text>
-            <Text>{t("copyright.rights")}*</Text>
+            <Text>
+                <>{t("copyright.rights")}*</>
+            </Text>
         </Group>
     );
 };

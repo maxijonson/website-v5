@@ -20,6 +20,7 @@ export default ({
             component="a"
             href={link}
             target={noBlank ? "_self" : "_blank"}
+            color="dark"
             size="xl"
             p={5}
             title={title}

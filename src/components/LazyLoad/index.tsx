@@ -57,7 +57,7 @@ export default ({
     const prevIsLoaded = React.useRef(isLoaded);
     const ctx = React.useContext(LazyLoadContext);
 
-    const [observerRef, observer] = useIntersection({
+    const { ref: observerRef, entry: observer } = useIntersection({
         threshold,
         rootMargin: typeof margin === "number" ? `${margin}px` : margin,
     });

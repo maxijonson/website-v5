@@ -16,11 +16,11 @@ import Skills from "./Skills";
 export default () => {
     const { t } = useTranslation(["home"]);
 
-    const [landingIntersectionRef, landingObserver] =
+    const { ref: landingIntersectionRef, entry: landingObserver } =
         useIntersection<HTMLDivElement>({
             threshold: 0.6,
         });
-    const [contactIntersectionRef, contactObserver] =
+    const { ref: contactIntersectionRef, entry: contactObserver } =
         useIntersection<HTMLDivElement>({
             threshold: 0.5,
         });

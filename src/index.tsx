@@ -32,17 +32,17 @@ const Root = () => {
             <MantineProvider
                 theme={{
                     fontFamily: "Lato",
-                }}
-                defaultProps={{
-                    Anchor: {
-                        weight: "bold",
-                        underline: false,
-                    },
-                }}
-                styles={{
-                    Anchor: {
-                        root: {
-                            color: "#0048cf",
+                    components: {
+                        Anchor: {
+                            defaultProps: {
+                                weight: "bold",
+                                underline: false,
+                            },
+                            styles: {
+                                root: {
+                                    color: "#0048cf",
+                                },
+                            },
                         },
                     },
                 }}
