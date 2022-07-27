@@ -33,7 +33,7 @@ http {
 		root /dist;
 
         location / {
-            try_files $uri $uri/;
+            try_files $uri $uri/ =404;
         }
 
         location @404 {
