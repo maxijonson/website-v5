@@ -35,5 +35,9 @@ http {
         location / {
             try_files $uri $uri/;
         }
+
+        location @404 {
+            return 404;
+        }
 	}
 }
