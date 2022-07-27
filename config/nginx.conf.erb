@@ -37,7 +37,7 @@ http {
         }
 
         location @404 {
-            try_files /index.html;
+            index index.html;
         }
 	}
 }
