@@ -33,7 +33,7 @@ http {
 		root dist/;
 
         location / {
-            try_files $uri $uri/ $uri/index.html index.html;
+            try_files $uri $uri/ $uri/index.html /index.html;
         }
 	}
 }
