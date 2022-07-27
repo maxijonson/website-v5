@@ -24,8 +24,7 @@ export default ({ skill }: SkillProficiencyProps) => {
             className={classes.skillTooltip}
             label={t(`home:skills.proficiency.${skill.proficiency}`)}
             withArrow
-            transition="pop-top-left"
-            position="left"
+            transition="pop"
         >
             <Group spacing={1}>
                 {_.times(skill.proficiency, (i) => (

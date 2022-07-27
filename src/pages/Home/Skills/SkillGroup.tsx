@@ -10,6 +10,9 @@ interface SkillGroupProps {
 }
 
 const useStyles = createStyles(() => ({
+    groupCard: {
+        overflow: "visible",
+    },
     groupTitle: {
         h2: {
             marginTop: "0px",
@@ -21,7 +24,7 @@ export default ({ skillGroup }: SkillGroupProps) => {
     const { classes } = useStyles();
 
     return (
-        <Card shadow="sm" withBorder>
+        <Card shadow="sm" withBorder className={classes.groupCard}>
             <Stack>
                 <HomeTitle
                     className={classes.groupTitle}
