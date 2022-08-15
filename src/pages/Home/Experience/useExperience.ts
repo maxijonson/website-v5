@@ -15,12 +15,19 @@ export default (): Experience[] => {
                 "home:experience.jobs.desjardins.description"
             ),
             logo: LogoDesjardins,
+            from: new Date(2022, 8),
+            position: t("home:experience.jobs.desjardins.position.0"),
+        },
+        {
+            company: "Desjardins",
+            logo: LogoDesjardins,
             from: new Date(2022, 4),
-            position: t("home:experience.jobs.desjardins.position"),
+            to: new Date(2022, 7),
+            position: t("home:experience.jobs.desjardins.position.1"),
             jobPoints: [
-                t("home:experience.jobs.desjardins.points.0"),
-                t("home:experience.jobs.desjardins.points.1"),
-                t("home:experience.jobs.desjardins.points.2"),
+                t("home:experience.jobs.desjardins.points.1.0"),
+                t("home:experience.jobs.desjardins.points.1.1"),
+                t("home:experience.jobs.desjardins.points.1.2"),
             ],
         },
         {

@@ -46,11 +46,17 @@
         "jobs": {
             "desjardins": {
                 "description": "The Desjardins Group is a Canadian financial services cooperative and the largest federation of credit unions in North America.",
-                "position": "IT Security Advisor Intern",
+                "position": [
+                    "IT Security Advisor",
+                    "IT Security Advisor Intern"
+                ],
                 "points": [
-                    "Create and deploy internal security tools.",
-                    "Apply Agile and DevOps development practices.",
-                    "Adapt existing tools to client needs."
+                    [],
+                    [
+                        "Create and deploy internal security tools.",
+                        "Apply Agile and DevOps development practices.",
+                        "Adapt existing tools to client needs."
+                    ]
                 ]
             },
             "ipnos": {

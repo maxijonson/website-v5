@@ -46,11 +46,17 @@
         "jobs": {
             "desjardins": {
                 "description": "Le Mouvement Desjardins est une coopérative canadienne de services financiers et la plus importante fédération de coopératives de crédit en Amérique du Nord.",
-                "position": "Conseiller en sécurité TI stagiaire",
+                "position": [
+                    "Conseiller en sécurité TI",
+                    "Conseiller en sécurité TI stagiaire"
+                ],
                 "points": [
-                    "Créer et déployer des outils de sécurité interne.",
-                    "Appliquer les pratiques de développement Agile et DevOps.",
-                    "Adapter les outils existants aux besoins des clients."
+                    [],
+                    [
+                        "Créer et déployer des outils de sécurité interne.",
+                        "Appliquer les pratiques de développement Agile et DevOps.",
+                        "Adapter les outils existants aux besoins des clients."
+                    ]
                 ]
             },
             "ipnos": {
