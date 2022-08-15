@@ -17,6 +17,11 @@ export default (): Experience[] => {
             logo: LogoDesjardins,
             from: new Date(2022, 4),
             position: t("home:experience.jobs.desjardins.position"),
+            jobPoints: [
+                t("home:experience.jobs.desjardins.points.0"),
+                t("home:experience.jobs.desjardins.points.1"),
+                t("home:experience.jobs.desjardins.points.2"),
+            ],
         },
         {
             company: "Ipnos",
