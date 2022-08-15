@@ -21,6 +21,8 @@ const useStyles = createStyles((theme) => ({
 
 const W = 300;
 const H = 160;
+const PY = 12;
+const IH = H - PY * 2;
 
 export default ({ name, image, cover = false }: ProjectImageProps) => {
     const { classes } = useStyles();
@@ -29,19 +31,20 @@ export default ({ name, image, cover = false }: ProjectImageProps) => {
         <Card.Section
             className={classes.projectImageWrapper}
             mb="lg"
-            style={{ height: "160px" }}
+            style={{ height: `${H}px` }}
+            py={PY}
         >
             {image ? (
                 <Image
                     width={`max(${W}px, 100%)`}
-                    height={H}
+                    height={IH}
                     fit={cover ? "cover" : "contain"}
                     src={image}
                     alt={name}
                     imageProps={{
                         loading: "lazy",
                         width: `${W}px`,
-                        height: `${H}px`,
+                        height: `${IH}px`,
                     }}
                 />
             ) : (

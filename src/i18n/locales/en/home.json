@@ -29,6 +29,7 @@
         "title": "Projects",
         "text": "Here's a few of the projects I've worked on. You can see the full list on my <0>{{github}}</0> profile, but these are the ones I am most proud of. Even if some of these were eventually left unfinished (like most my repos, oops!), I still learned a lot from them.",
         "short": {
+            "video-merger": "A simple web API to merge multiple videos into one. Built to work with iOS Shortcuts, use this tool to merge your videos straight from your Photos app!",
             "nuclui": "A React UI framework, built with TypeScript, to make your developement easier so you can give more focus on your app and less on the design!",
             "genft": "Generate NFT collections by composing multiple layers together.",
             "intellibot": "The ultimate multipurpose Discord bot.",

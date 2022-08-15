@@ -4,6 +4,7 @@ import { FaFaucet } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { Project } from "./types";
 
+import ImageVideoMerger from "../../../assets/images/projects/video-merger.png";
 import ImageNuclui from "../../../assets/images/projects/nuclui.png";
 import ImageIntellibot from "../../../assets/images/projects/intellibot.png";
 import ImagePunchBot from "../../../assets/images/projects/punchbot.png";
@@ -14,6 +15,18 @@ export default (): Project[] => {
     const { t } = useTranslation(["home"]);
 
     return [
+        {
+            name: "Video Merger",
+            short: t("home:projects.short.video-merger"),
+            image: ImageVideoMerger,
+            links: [
+                {
+                    title: "Github",
+                    icon: AiFillGithub,
+                    url: "https://github.com/maxijonson/video-merger",
+                },
+            ],
+        },
         {
             name: "Nuclui",
             short: t("home:projects.short.nuclui"),
@@ -47,7 +60,6 @@ export default (): Project[] => {
                 },
             ],
         },
-
         {
             name: "Intellibot",
             short: t("home:projects.short.intellibot"),
