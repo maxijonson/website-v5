@@ -8,15 +8,15 @@ interface UseGetDateOptions {
     day?: boolean;
     month?: boolean;
     year?: boolean;
-    default?: string;
+    default?: string | null;
 }
 
 interface DateRangeProps {
     from?: Date;
     to?: Date;
     options?: UseGetDateOptions & {
-        defaultTo?: string;
-        defaultFrom?: string;
+        defaultTo?: string | null;
+        defaultFrom?: string | null;
     };
 }
 

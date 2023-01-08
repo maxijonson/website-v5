@@ -3,7 +3,7 @@ export interface Experience {
     logo: string;
     from: Date;
     position: string;
-    companyDescription?: string;
+    companyDescription?: string | null;
     to?: Date;
     jobPoints?: string[];
 }

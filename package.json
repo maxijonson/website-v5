@@ -51,7 +51,8 @@
         "react-i18next": "^12.1.4",
         "react-icons": "^4.7.1",
         "react-qr-code": "^2.0.11",
-        "react-router-dom": "6.6.1"
+        "react-router-dom": "6.6.1",
+        "vite-plugin-eslint": "^1.8.1"
     },
     "devDependencies": {
         "@types/fluent-ffmpeg": "^2.1.20",

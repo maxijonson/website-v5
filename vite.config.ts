@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import { imagetools } from "vite-imagetools";
 import { resolve } from "path";
+import eslintPlugin from "vite-plugin-eslint";
 import react from "@vitejs/plugin-react";
 import wc from "wildcard-match";
 import _ from "lodash";
@@ -116,6 +117,7 @@ const chunkDependencies = () => {
 export default defineConfig({
     plugins: [
         react(),
+        eslintPlugin(),
         imagetools({
             include: "**/*.{jpeg,jpg,png,webp}*",
             defaultDirectives: (url) => {
