@@ -25,6 +25,7 @@ export default ({ skill }: SkillProficiencyProps) => {
             label={t(`home:skills.proficiency.${skill.proficiency}`)}
             withArrow
             transition="pop"
+            multiline
         >
             <Group spacing={1}>
                 {_.times(skill.proficiency, (i) => (
