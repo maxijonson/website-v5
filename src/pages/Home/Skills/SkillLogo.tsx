@@ -9,7 +9,6 @@ interface SkillLogoProps {
 
 const useStyles = createStyles(() => ({
     disabled: {
-        filter: "grayscale(100%)",
         opacity: "0.25",
     },
 }));
