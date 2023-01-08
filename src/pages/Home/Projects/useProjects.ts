@@ -16,6 +16,27 @@ export default (): Project[] => {
 
     return [
         {
+            name: "Phisherman",
+            short: t("home:projects.short.phisherman"),
+            links: [
+                {
+                    title: "Github",
+                    icon: AiFillGithub,
+                    url: "https://github.com/maxijonson/phisherman",
+                },
+                {
+                    title: "NPM - Phisherman library",
+                    icon: DiNpm,
+                    url: "https://www.npmjs.com/package/@maxijonson/phisherman",
+                },
+                {
+                    title: "NPM - Phisherman CLI",
+                    icon: DiNpm,
+                    url: "https://www.npmjs.com/package/@maxijonson/phisherman-cli",
+                },
+            ],
+        },
+        {
             name: "Video Merger",
             short: t("home:projects.short.video-merger"),
             image: ImageVideoMerger,

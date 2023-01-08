@@ -29,6 +29,7 @@
         "title": "Projets",
         "text": "Voici quelques-uns des projets sur lesquels j'ai travaillé. Vous pouvez voir la liste complète sur mon profil <0>{{github}}</0>, mais ce sont ceux dont je suis le plus fier. Même si certains d'entre eux ont finalement été laissés inachevés (comme la plupart de mes repos, oups !), j'ai quand même beaucoup appris d'eux.",
         "short": {
+            "phisherman": "Une bibliothèque et un outil CLI pour envoyer de faux renseignements personnels aux sites de phishing, polluant ainsi leur base de données avec de fausses informations.",
             "video-merger": "Une simple API web pour fusionner plusieurs vidéos en une seule. Conçu pour fonctionner avec les raccourcis iOS, cet outil vous permet de fusionner vos vidéos directement depuis l'application Photos !",
             "nuclui": "Un framework React, construit avec TypeScript, pour faciliter votre développement et vous permettre de vous concentrer davantage sur votre application et moins sur le design !",
             "genft": "Générer des collections NFT en composant plusieurs couches ensemble.",
