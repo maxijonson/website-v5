@@ -12,6 +12,7 @@ import IconJava from "../../../assets/images/skills/java.svg";
 import IconCSharp from "../../../assets/images/skills/csharp.svg";
 import IconPython from "../../../assets/images/skills/python.png";
 import IconCpp from "../../../assets/images/skills/cpp.png";
+import IconRust from "../../../assets/images/skills/rust.png";
 
 import IconMySql from "../../../assets/images/skills/mysql.svg";
 import IconOracleSql from "../../../assets/images/skills/oraclesql.png";
@@ -52,6 +53,7 @@ export default (): SkillGroup[] => {
                 { name: "C#", proficiency: 3, logo: IconCSharp },
                 { name: "Python", proficiency: 3, logo: IconPython },
                 { name: "C++", proficiency: 2, logo: IconCpp },
+                { name: "Rust", proficiency: 1, logo: IconRust },
             ],
         },
         {
