@@ -49,6 +49,7 @@ export default ({
             {...loadingOverlayProps}
             visible={visible}
             className={classes.loadingOverlay}
+            zIndex={1002}
             loader={
                 <Stack align="center">
                     <AnimatedLogo
