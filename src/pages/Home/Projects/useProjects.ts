@@ -1,9 +1,11 @@
 import { AiFillGithub } from "react-icons/ai";
 import { DiNpm } from "react-icons/di";
 import { FaFaucet } from "react-icons/fa";
+import { BiGlobe } from "react-icons/bi";
 import { useTranslation } from "react-i18next";
 import { Project } from "./types";
 
+import ImageGptTurbo from "../../../assets/images/projects/gpt-turbo.png";
 import ImageVideoMerger from "../../../assets/images/projects/video-merger.png";
 import ImageNuclui from "../../../assets/images/projects/nuclui.png";
 import ImageIntellibot from "../../../assets/images/projects/intellibot.png";
@@ -15,6 +17,33 @@ export default (): Project[] => {
     const { t } = useTranslation(["home"]);
 
     return [
+        {
+            name: "GPT Turbo",
+            short: t("home:projects.short.gptturbo"),
+            image: ImageGptTurbo,
+            links: [
+                {
+                    title: "Github",
+                    icon: AiFillGithub,
+                    url: "https://github.com/maxijonson/gpt-turbo",
+                },
+                {
+                    title: "NPM - GPT Turbo library",
+                    icon: DiNpm,
+                    url: "https://www.npmjs.com/package/gpt-turbo",
+                },
+                {
+                    title: "NPM - GPT Turbo CLI",
+                    icon: DiNpm,
+                    url: "https://www.npmjs.com/package/gpt-turbo-cli",
+                },
+                {
+                    title: "GPT Turbo Web App",
+                    icon: BiGlobe,
+                    url: "https://gpt-turbo-web.chintristan.io/",
+                },
+            ],
+        },
         {
             name: "Phisherman",
             short: t("home:projects.short.phisherman"),
