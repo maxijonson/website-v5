@@ -1,7 +1,7 @@
 import { Center, Image } from "@mantine/core";
 import React from "react";
 
-import ProfilePicture from "../../../assets/images/tristan/mtl.jpg";
+import ProfilePicture from "../../../assets/images/tristan/dci.jpg";
 
 const W = 200;
 const H = W;

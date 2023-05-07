@@ -37,7 +37,7 @@
     },
     "homepage": "https://github.com/maxijonson/website-v5#readme",
     "engines": {
-        "node": "16.x"
+        "node": ">=16.x"
     },
     "dependencies": {
         "@mantine/core": "^5.10.0",
