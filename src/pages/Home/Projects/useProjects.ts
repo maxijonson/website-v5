@@ -1,6 +1,6 @@
 import { AiFillGithub } from "react-icons/ai";
 import { DiNpm } from "react-icons/di";
-import { FaFaucet } from "react-icons/fa";
+import { FaDiscord, FaFaucet } from "react-icons/fa";
 import { BiGlobe } from "react-icons/bi";
 import { useTranslation } from "react-i18next";
 import { Project } from "./types";
@@ -41,6 +41,11 @@ export default (): Project[] => {
                     title: "GPT Turbo Web App",
                     icon: BiGlobe,
                     url: "https://gpt-turbo-web.chintristan.io/",
+                },
+                {
+                    title: "Discord - GPT Turbo",
+                    icon: FaDiscord,
+                    url: "https://discord.com/invite/Aa77KCmwRx",
                 },
             ],
         },
