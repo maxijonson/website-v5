@@ -1,11 +1,11 @@
 {
-    "title": "Tristan Chin | Software Engineering Student",
+    "title": "Tristan Chin | B. Eng. in Software Engineering",
     "landing": {
-        "subtitle": "Software Engineering Student"
+        "subtitle": "B. Eng. in Software Engineering"
     },
     "bio": {
         "title": "About Me",
-        "text": "I'm a software engineering student located in Montreal, Quebec. I have a great passion and experience for Web development, from Front-End to Back-End. My favorite programming language has always been JavaScript (more specifically, TypeScript) and I always get excited to try out new technologies to build something amazing! I love to learn new things and I'm always looking for ways to improve myself, such as self learning by trying them out, taking an online course or participating in a CTF.\n\nI am also a big Star Wars fan. Whenever a new series or season comes out, I'll be first to watch it! I love EDM music and my favorite artist is Illenium. I like putting some good jam on to fuel my coding fingers! I am also a huge dog lover and am the proud owner of an adorable Soft Coated Wheaten Terrier named \"Kingsley\"!"
+        "text": "I'm a bachelor of software engineering located in Montreal, Quebec. I have a great passion and experience for Web development, from Front-End to Back-End. My favorite programming language has always been JavaScript (more specifically, TypeScript) and I always get excited to try out new technologies to build something amazing! I love to learn new things and I'm always looking for ways to improve myself, such as self learning by trying them out, taking an online course or participating in a CTF.\n\nI am also a big Star Wars fan. Whenever a new series or season comes out, I'll be first to watch it! I love EDM music and my favorite artist is Illenium. I like putting some good jam on to fuel my coding fingers! I am also a huge dog lover and am the proud owner of an adorable Soft Coated Wheaten Terrier named \"Kingsley\"!"
     },
     "skills": {
         "title": "Skills",
@@ -53,7 +53,9 @@
                     "IT Security Advisor Intern"
                 ],
                 "points": [
-                    [],
+                    [
+                        "Create full-stack web applications using .Net 6 and Blazor."
+                    ],
                     [
                         "Create and deploy internal security tools.",
                         "Apply Agile and DevOps development practices.",
@@ -63,15 +65,20 @@
             },
             "ipnos": {
                 "description": "Ipnos is a leading wellness app development studio. They're the creator of the sleep & relaxation app BetterSleep (formerly Relax Melodies).",
-                "position": "Full-Stack Developer Intern",
+                "position": [
+                    "Full-Stack Web Developer",
+                    "Full-Stack Web Developer Intern"
+                ],
                 "points": [
-                    "Create a rich user interface in a Web app environment using Angular.",
-                    "Create Back-End services using cloud functions that are used by the Web app.",
-                    "Research and analyze the feasability of new development projects."
+                    [],
+                    [
+                        "Create a rich user interface in a Web app environment using Angular.",
+                        "Create Back-End services using cloud functions that are used by the Web app.",
+                        "Research and analyze the feasability of new development projects."
+                    ]
                 ]
             },
             "comact": {
-                "name": "Comact",
                 "description": "Comact designs and manufactures sawmill and planer mill equipment. They offer the most comprehensive range of products on the market.",
                 "position": [
                     "Front-End Developer Intern (University)",

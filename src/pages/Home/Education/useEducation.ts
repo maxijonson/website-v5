@@ -19,7 +19,6 @@ export default (): Education[] => {
             location: "École de Technologie Supérieure",
             from: new Date(2019, 8),
             to: new Date(2023, 7),
-            ongoing: true,
         },
         {
             name: t("home:education.name.compsci"),

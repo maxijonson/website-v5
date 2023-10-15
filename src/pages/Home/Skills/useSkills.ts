@@ -5,6 +5,7 @@ import IconCSS from "../../../assets/images/skills/css.svg";
 import IconJavaScript from "../../../assets/images/skills/javascript.svg";
 import IconTypeScript from "../../../assets/images/skills/typescript.svg";
 import IconReact from "../../../assets/images/skills/react.svg";
+import IconNextJS from "../../../assets/images/skills/next-js.svg";
 import IconAngular from "../../../assets/images/skills/angular.svg";
 import IconNodeJS from "../../../assets/images/skills/nodejs.png";
 
@@ -42,6 +43,7 @@ export default (): SkillGroup[] => {
                 { name: "JavaScript", proficiency: 5, logo: IconJavaScript },
                 { name: "TypeScript", proficiency: 5, logo: IconTypeScript },
                 { name: "React", proficiency: 5, logo: IconReact },
+                { name: "NextJS", proficiency: 4, logo: IconNextJS },
                 { name: "Angular", proficiency: 3, logo: IconAngular },
                 { name: "NodeJS", proficiency: 4, logo: IconNodeJS },
             ],

@@ -1,11 +1,11 @@
 {
-    "title": "Tristan Chin | Étudiant en génie logiciel",
+    "title": "Tristan Chin | B. ing. en génie logiciel",
     "landing": {
-        "subtitle": "Étudiant en génie logiciel"
+        "subtitle": "B. ing. en génie logiciel"
     },
     "bio": {
         "title": "À propos de moi",
-        "text": "Je suis un étudiant en génie logiciel situé à Montréal, au Québec. J'ai une grande passion et expérience pour le développement Web, du Front-End au Back-End. Mon langage de programmation préféré a toujours été JavaScript (plus précisément, TypeScript) et je suis toujours enthousiaste à l'idée d'essayer de nouvelles technologies pour construire quelque chose d'incroyable ! J'adore apprendre de nouvelles choses et je suis toujours à la recherche de moyens pour m'améliorer, comme l'auto-apprentissage en les essayant, en suivant un cours en ligne ou en participant à un CTF.\n\nJe suis également un grand fan de Star Wars. Dès qu'une nouvelle série ou saison sort, je suis le premier à la regarder ! J'adore la musique EDM et mon artiste préféré est Illenium. J'aime mettre de la bonne musique pour alimenter mes doigts de programmeur ! Je suis également un grand amateur de chiens et je suis l'heureux propriétaire d'un adorable Wheaten Terrier à poil doux nommé Kingsley !"
+        "text": "Je suis un bachelier en génie logiciel situé à Montréal, au Québec. J'ai une grande passion et expérience pour le développement Web, du Front-End au Back-End. Mon langage de programmation préféré a toujours été JavaScript (plus précisément, TypeScript) et je suis toujours enthousiaste à l'idée d'essayer de nouvelles technologies pour construire quelque chose d'incroyable ! J'adore apprendre de nouvelles choses et je suis toujours à la recherche de moyens pour m'améliorer, comme l'auto-apprentissage en les essayant, en suivant un cours en ligne ou en participant à un CTF.\n\nJe suis également un grand fan de Star Wars. Dès qu'une nouvelle série ou saison sort, je suis le premier à la regarder ! J'adore la musique EDM et mon artiste préféré est Illenium. J'aime mettre de la bonne musique pour alimenter mes doigts de programmeur ! Je suis également un grand amateur de chiens et je suis l'heureux propriétaire d'un adorable Wheaten Terrier à poil doux nommé Kingsley !"
     },
     "skills": {
         "title": "Compétences",
@@ -53,7 +53,9 @@
                     "Conseiller en sécurité TI stagiaire"
                 ],
                 "points": [
-                    [],
+                    [
+                        "Créer des applications web full-stack en utilisant .Net 6 et Blazor."
+                    ],
                     [
                         "Créer et déployer des outils de sécurité interne.",
                         "Appliquer les pratiques de développement Agile et DevOps.",
@@ -63,11 +65,17 @@
             },
             "ipnos": {
                 "description": "Ipnos est un studio de développement d'applications de bien-être de premier plan. Il est le créateur de l'application de sommeil et de relaxation BetterSleep (anciennement Relax Melodies).",
-                "position": "Développeur Full-Stack stagiaire",
+                "position": [
+                    "Développeur web full-stack",
+                    "Développeur web full-stack stagiaire"
+                ],
                 "points": [
-                    "Créer une interface utilisateur riche dans un environnement d'application Web à l'aide d'Angular.",
-                    "Créez des services Back-End en utilisant les fonctions du nuage qui sont utilisées par l'application Web.",
-                    "Rechercher et analyser la faisabilité de nouveaux projets de développement."
+                    [],
+                    [
+                        "Créer une interface utilisateur riche dans un environnement d'application Web à l'aide d'Angular.",
+                        "Créez des services Back-End en utilisant les fonctions du nuage qui sont utilisées par l'application Web.",
+                        "Rechercher et analyser la faisabilité de nouveaux projets de développement."
+                    ]
                 ]
             },
             "comact": {

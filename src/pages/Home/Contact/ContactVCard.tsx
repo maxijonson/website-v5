@@ -74,7 +74,7 @@ export default () => {
                 <Center>
                     <QRCode
                         data-autofocus
-                        value={`${window.location.origin}/${vcardUrl}`}
+                        value={`${window.location.origin}${vcardUrl}`}
                         size={256}
                     />
                 </Center>

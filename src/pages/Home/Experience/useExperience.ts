@@ -10,13 +10,22 @@ export default (): Experience[] => {
 
     return [
         {
+            company: "Ipnos",
+            companyDescription: t("home:experience.jobs.ipnos.description"),
+            logo: LogoIpnos,
+            from: new Date(2023, 8),
+            position: t("home:experience.jobs.ipnos.position.0"),
+        },
+        {
             company: "Desjardins",
             companyDescription: t(
                 "home:experience.jobs.desjardins.description"
             ),
             logo: LogoDesjardins,
             from: new Date(2022, 8),
+            to: new Date(2023, 8),
             position: t("home:experience.jobs.desjardins.position.0"),
+            jobPoints: [t("home:experience.jobs.desjardins.points.0.0")],
         },
         {
             company: "Desjardins",
@@ -32,15 +41,14 @@ export default (): Experience[] => {
         },
         {
             company: "Ipnos",
-            companyDescription: t("home:experience.jobs.ipnos.description"),
             logo: LogoIpnos,
             from: new Date(2021, 4),
             to: new Date(2021, 7),
-            position: t("home:experience.jobs.ipnos.position"),
+            position: t("home:experience.jobs.ipnos.position.1"),
             jobPoints: [
-                t("home:experience.jobs.ipnos.points.0"),
-                t("home:experience.jobs.ipnos.points.1"),
-                t("home:experience.jobs.ipnos.points.2"),
+                t("home:experience.jobs.ipnos.points.1.0"),
+                t("home:experience.jobs.ipnos.points.1.1"),
+                t("home:experience.jobs.ipnos.points.1.2"),
             ],
         },
         {
@@ -56,7 +64,7 @@ export default (): Experience[] => {
             ],
         },
         {
-            company: t("home:experience.jobs.comact.name"),
+            company: "Comact",
             logo: LogoComact,
             from: new Date(2019, 5),
             to: new Date(2019, 8),
@@ -67,7 +75,7 @@ export default (): Experience[] => {
             ],
         },
         {
-            company: t("home:experience.jobs.comact.name"),
+            company: "Comact",
             logo: LogoComact,
             from: new Date(2019, 0),
             to: new Date(2019, 4),
